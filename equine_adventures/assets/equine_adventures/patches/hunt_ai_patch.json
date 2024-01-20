@@ -1,0 +1,142 @@
+[
+    {
+        file: "game:entities/land/bear.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/0/entityCodesByType/*/-",
+        value: "equine_adventures:equine-*"
+    },
+    {
+        file: "game:entities/land/bear.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*/-",
+        value: "equine_adventures:equine-*"
+    },
+    {
+        file: "game:entities/land/wolf-female.json",
+        op: "add",
+        path: "/server/behaviors/10/aitasks/0/entityCodes/-",
+        value: "equine_adventures:equine-*"
+    },
+    {
+        file: "game:entities/land/wolf-female.json",
+        op: "add",
+        path: "/server/behaviors/10/aitasks/3/entityCodes/-",
+        value: "equine_adventures:equine-*"
+    },
+    {
+        file: "game:entities/land/wolf-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/0/entityCodes/-",
+        value: "equine_adventures:equine-*"
+    },
+    {
+        file: "game:entities/land/wolf-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodes/-",
+        value: "equine_adventures:equine-*"
+    },
+    {
+        file: "game:entities/land/hyena-female.json",
+        op: "add",
+        path: "/server/behaviors/9/states/-",
+        value:  { 
+                    code: "saturated", duration: 1200, chance: 1, slot: 0, priority: 1, accumType: "sum",
+                    belowTempDuration: 600,
+                    belowTempThreshold: -5
+                },
+    },
+    {
+        file: "game:entities/land/hyena-male.json",
+        op: "add",
+        path: "/server/behaviors/7/states/-",
+        value:  { 
+                    code: "saturated", duration: 1200, chance: 1, slot: 0, priority: 1, accumType: "sum",
+                    belowTempDuration: 600,
+                    belowTempThreshold: -5
+                },
+    },
+    {
+        file: "game:entities/land/hyena-female.json",
+        op: "add",
+        path: "/server/behaviors/10/aitasks/-",
+        value:  {
+                    code: "meleeattack",
+                    entityCodes: ["equine_adventures:equine-*"],
+                    priority: 2,
+                    damage: 8,
+                    damageTier: 2,
+                    damageType: "SlashingAttack",
+                    slot: 1,
+                    mincooldown: 1500, 
+                    maxcooldown: 1500, 
+                    attackDurationMs: 800,
+                    damagePlayerAtMs: 500,
+                    animation: "Attack",
+                    animationSpeed: 2.5,
+                    sound: "creature/hyena/attack"
+                },
+    },
+    {
+        file: "game:entities/land/hyena-female.json",
+        op: "add",
+        path: "/server/behaviors/10/aitasks/-",
+        value:  {
+                    code: "seekentity",
+                    entityCodes: ["equine_adventures:equine-*"],
+                    priority: 1.5,
+                    movespeed: 0.045,
+                    seekingRange: 15,
+                    belowTempSeekingRange: 25,
+                    belowTempThreshold: -5,
+                    animation: "Run",
+                    leapAtTarget: true,
+                    leapAnimation: null,
+                    animationSpeed: 2.2,
+                    leapChance: 0.01,
+                    sound: "creature/hyena/growl",
+                    whenNotInEmotionState: "saturated"
+                },
+    },
+    {
+        file: "game:entities/land/hyena-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/-",
+        value:  {
+                    code: "meleeattack",
+                    entityCodes: ["equine_adventures:equine-*"],
+                    priority: 2,
+                    damage: 8,
+                    damageTier: 2,
+                    damageType: "SlashingAttack",
+                    slot: 1,
+                    mincooldown: 1500, 
+                    maxcooldown: 1500, 
+                    attackDurationMs: 800,
+                    damagePlayerAtMs: 500,
+                    animation: "Attack",
+                    animationSpeed: 2.5,
+                    sound: "creature/hyena/attack"
+                },
+    },
+    {
+        file: "game:entities/land/hyena-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/-",
+        value:  {
+                    code: "seekentity",
+                    entityCodes: ["equine_adventures:equine-*"],
+                    priority: 1.5,
+                    movespeed: 0.045,
+                    seekingRange: 15,
+                    belowTempSeekingRange: 25,
+                    belowTempThreshold: -5,
+                    animation: "Run",
+                    leapAtTarget: true,
+                    leapAnimation: null,
+                    animationSpeed: 2.2,
+                    leapChance: 0.01,
+                    sound: "creature/hyena/growl",
+                    whenNotInEmotionState: "saturated"
+                },
+    },
+]

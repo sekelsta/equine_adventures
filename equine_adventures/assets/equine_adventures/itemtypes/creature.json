@@ -1,0 +1,53 @@
+{
+    code: "creature-equine",
+    class: "ItemCreature",
+    maxstacksize: 64,
+    variantgroups: [
+        {
+          code: "type",
+          states: [ "horse-tarpan", "horse-takhi", "ass-donkey", "ass-onager", "ass-kiang", "zebra-plains", "zebra-quagga", "zebra-mountain", "zebra-imperial" ]
+        },
+        { "code": "gender", "states": ["male", "female"] },
+        { "code": "age", "states": ["adult", "yearling", "foal"] }
+    ],
+    shapeByType: {
+        "*-foal": {
+		    "base": "entity/equine/horse-foal"
+	    },
+        "*-yearling": {
+		    "base": "entity/equine/horse-adult"
+	    },
+        "*-adult": {
+		    "base": "entity/equine/horse-adult"
+	    },
+    },
+    sizeByType: {
+        "*-male-adult": 1.01,
+        "*-female-adult": 0.99,
+        "*-male-yearling": 0.91,
+        "*-female-yearling": 0.89,
+        "*": 1.0
+    },
+    textureByType: {
+        "*-foal": { base: "entity/equine/horse-foal" },
+        "*-yearling": { base: "entity/equine/horse-adult" },
+        "*-adult": { base: "entity/equine/horse-adult" },
+    },
+    creativeinventory: {
+        general: [ "*" ],
+        items: [ "*" ],
+        creatures: [ "*" ]
+    },
+    materialDensity: 600,
+    guiTransform: {
+		rotate: true,
+		translation: { x: 3, y: 0, z: 0 },
+		rotation: { x: -11, y: -52, z: -180 },
+		origin: { x: 0.5, y: 0.8, z: 0.5 },
+		scale: 0.97
+    },
+    fpHandTransform: {
+		translation: { x: 0.2, y: 0, z: 0 },
+		rotation: { x: -8, y: -63, z: -7 }
+	}
+}
