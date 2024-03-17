@@ -1,0 +1,10 @@
+{
+	ingredientPattern: "PPP,PHP,PPP",
+	ingredients: {
+		"P": { type: "item", code: "game:plank-*", name: "wood", quantity: 1, skipVariants: ["agedebony", "rottenebony"] },
+		"H": { type: "item", code: "game:hoop-*", name: "metal", quantity: 1,  allowedVariants: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"] },
+	},
+	width: 3,
+	height: 3,
+	output: { type: "item", code: "equine_adventures:wheel-{wood}-{metal}", quantity: 1  }
+}

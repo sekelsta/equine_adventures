@@ -10,17 +10,17 @@ namespace EquineAdventures
         // Called on server and client
         public override void Start(ICoreAPI api)
         {
-            api.Logger.Notification("Hello from equine adventures mod: " + Lang.Get("mymodid:creaturegroup-equine"));
+            api.RegisterEntityBehaviorClass("playerbondable", typeof(PlayerBondable));
         }
 
         public override void StartServerSide(ICoreServerAPI api)
         {
-            api.Logger.Notification("Hello from equine adventures mod server side");
+            // Server-side code goes here
         }
 
         public override void StartClientSide(ICoreClientAPI api)
         {
-            api.Logger.Notification("Hello from equine adventures mod client side");
+            // Client-side code goes here
         }
     }
 }

@@ -23,9 +23,9 @@
     attributes: {
         killedByInfoText: "deadcreature-killed",
         creatureDiet: {
-            foodCategories: ["Vegetable", "Grain"],
+            foodCategories: ["Vegetable", "Grain", "Fruit"],
             foodTags: ["nibbleCrop", "grass"],
-            skipFoodTags: ["parsnip", "cassava"]
+            skipFoodTags: ["parsnip", "cassava", "turnip", "cabbage", "onion"]
         },
         basketCatchable: true,
         trapChance: 0.0,
@@ -55,14 +55,25 @@
         },
         behaviors: [
             { code: "repulseagents" },
-            { code: "controlledphysics", stepHeight: 3.1251 },
+            {
+                code: "controlledphysics",
+                stepHeightByType: {
+                    "*-kiang-*" : 3.125,
+                    "*-ass-*": 2.75,
+                    "*-zebra-mountain-*": 2.5,
+                    "*-zebra-imperial-*": 2.125,
+                    "*": 1.75
+                }
+            },
             { code: "interpolateposition" },
             { code: "floatupwhenstuck", onlyWhenDead: true },
+            { code: "playerbondable" },
 			{ code: "multiply", enabledByType: { "*-female-adult": true, "*": false } },
             { code: "harvestable" },
-            { code: "despawn", minPlayerDistance: 16, belowLightLevel: 8, "minSeconds": 300 },
+            { code: "despawn", minPlayerDistance: 16, belowLightLevel: 2, "minSeconds": 900 },
 			{ code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
 			{ code: "ropetieable", minGeneration: 2 },
+			{ code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
         ],
         animations: [
             {
@@ -176,13 +187,19 @@
             { code: "repulseagents" },
             {
                 code: "controlledphysics",
-                stepHeight: 3.1251
+                stepHeightByType: {
+                    "*-kiang-*" : 3.125,
+                    "*-ass-*": 2.75,
+                    "*-zebra-mountain-*": 2.5,
+                    "*-zebra-imperial-*": 2.125,
+                    "*": 1.75
+                }
             },
             {
                 code: "despawn",
                 minPlayerDistance: 8,
-                belowLightLevel: 8,
-                minSeconds: 300
+                belowLightLevel: 2,
+                minSeconds: 900
             },
             {
                 code: "health",
@@ -207,6 +224,7 @@
                 code: "floatupwhenstuck",
                 onlyWhenDead: true
             },
+            { code: "playerbondable" },
             {
                 code: "harvestable",
                 drops: [
@@ -318,7 +336,7 @@
                         whenHealthRelBelow: 0.4,
                         duration: 60,
                         chanceByType: {
-                            "*-male-*": 0.95,
+                            "*-male-adult": 0.95,
                             "*": 1.0
                         },
                         slot: 0,
@@ -329,7 +347,7 @@
                         code: "fleeondamage",
                         duration: 40,
                         chanceByType: {
-                            "*-male-*": 0.85,
+                            "*-male-adult": 0.85,
                             "*": 1.0
                         },
                         slot: 0,
@@ -347,7 +365,7 @@
                         code: "aggressiveondamage",
                         duration: 30,
                         chanceByType: {
-                            "*-male-*": 0.5,
+                            "*-male-adult": 0.5,
                             "*": 0.0
                         },
                         slot: 0,
@@ -369,54 +387,69 @@
                 aitasks: [
                     {
                         code: "meleeattack",
-                        animation: "Kick",
+                        animation: "Bite",
                         enabledByType: {
                             "*-foal": false,
-                            "*-female-*": false,
                             "*": true
                         },
-                        entityCodes: [ "player", "wolf-male", "wolf-female", "bear-*", "hyena-male", "hyena-female", "fox-male", "fox-female" ],
+                        entityCodes: [ "player", "wolf-*", "bear-*", "hyena-*", "fox-*", "caninae-*", "machairodontinae-*", "pantherinae-*", "varanus-*", "blackrat", "chainviper", "coachwhip", "pitviper" ],
                         priority: 3,
                         damageByType: {
-                            "equine-horse-male-adult": 8,
-                            "equine-horse-female-adult": 6,
                             "equine-*-male-adult": 6,
                             "equine-*-female-adult": 4,
-                            "equine-foal": 0.1
+                            "equine-*-male-yearling": 4,
+                            "equine-*-female-yearling": 3
                         },
                         damageTier: 2,
                         damageType: "SlashingAttack",
                         slot: 1,
                         mincooldown: 1500,
                         maxcooldown: 2500,
-                        "attackDurationMs": 1250,
-                        "damagePlayerAtMs": 500,
+                        attackDurationMs: 1250,
+                        damagePlayerAtMs: 500,
                         animationSpeed: 2.5,
                         whenInEmotionState: "aggressiveondamage"
                     },
                     {
                         code: "fleeentity",
                         animation: "Run",
-                        entityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        entityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*", "caninae-cerdocyonina-adult-*-chrysocyon-brachyurus", "caninae-cerdocyonina-adult-*-dusicyon-australis", "caninae-cerdocyonina-adult-*-dusicyon-avus", "caninae-cerdocyonina-adult-*-speothos-pacivorus", "caninae-canina-adult-*", "machairodontinae-adult-*" ],
                         priority: 1.51,
                         movespeedByType: {
                             "equine-horse-*-adult": 0.08,
+                            "equine-horse-*-yearling": 0.08,
                             "equine-horse-*-foal": 0.06,
                             "equine-*-adult": 0.06,
+                            "equine-*-yearling": 0.06,
                             "equine-*-foal": 0.05
                         },
                         seekingRange: 14,
                         animationSpeed: 2
                     },
                     {
+                        code: "fleeentity",
+                        animation: "Run",
+                        entityCodes: [ "varanus-adult-salvator", "varanus-adult-marmoratus", "varanus-adult-palawanensis", "varanus-adult-komodoensis", "blackrat", "chainviper", "coachwhip", "pitviper" ],
+                        priority: 1.49,
+                        movespeedByType: {
+                            "equine-horse-*-adult": 0.08,
+                            "equine-horse-*-yearling": 0.08,
+                            "equine-horse-*-foal": 0.06,
+                            "equine-*-adult": 0.06,
+                            "equine-*-yearling": 0.06,
+                            "equine-*-foal": 0.05
+                        },
+                        seekingRange: 6,
+                        animationSpeed: 2
+                    },
+                    {
                         code: "seekentity",
                         animation: "Bite",
                         enabledByType: {
-                            "*-foal": false,
-                            "*-female-*": false,
-                            "*": true
+                            "*-male-adult": true,
+                            "*": false
                         },
-                        entityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female" ],
+                        entityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "caninae-cerdocyonina-male-chrysocyon-brachyurus", "caninae-cerdocyonina-female-chrysocyon-brachyurus", "caninae-cerdocyonina-male-dusicyon-australis", "caninae-cerdocyonina-female-dusicyon-australis", "caninae-cerdocyonina-male-dusicyon-avus", "caninae-cerdocyonina-female-dusicyon-avus", "caninae-cerdocyonina-male-speothos-pacivorus", "caninae-cerdocyonina-female-speothos-pacivorus" ],
                         priority: 1.6,
                         mincooldown: 600,
                         maxcooldown: 650,
@@ -460,10 +493,10 @@
                         mincooldown: 6000,
                         maxcooldown: 120000,
                         priorityForCancel: 1.28,
-                        stopOnNearbyEntityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                         stopRange: 10,
                         stopOnHurt: true,
-                        sound: "creature/hooved/generic/sniff*"
+                        sound: "game:creature/hooved/generic/sniff*"
                     },
                     {
                         code: "idle",
@@ -485,7 +518,7 @@
                                 "toHour": 4
                             }
                         ],
-                        stopOnNearbyEntityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                         stopRange: 8,
                         stopOnHurt: true
                     },
@@ -498,7 +531,7 @@
                         mincooldown: 6000,
                         maxcooldown: 120000,
                         priorityForCancel: 1.28,
-                        stopOnNearbyEntityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                         stopRange: 10,
                         stopOnHurt: true
                     },
@@ -507,7 +540,7 @@
                         animation: "Rear",
                         priority: 1.0,
                         priorityForCancel: 1.35,
-                        stopOnNearbyEntityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                         minduration: 4667,
                         maxduration: 4667,
                         chance: 0.1,
@@ -520,7 +553,7 @@
                         animation: "Eat",
                         priority: 1.2,
                         priorityForCancel: 1.35,
-                        stopOnNearbyEntityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                         minduration: 2667,
                         maxduration: 2667,
                         mincooldown: 6000,
@@ -532,7 +565,7 @@
                         animation: "Walk",
                         priority: 1.0,
                         priorityForCancel: 1.35,
-                        stopOnNearbyEntityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "bear-*" ],
+                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                         movespeedByType: {
                             "equine-horse-*-adult": 0.006,
                             "equine-horse-*-foal": 0.004,
@@ -570,6 +603,19 @@
                         priority: 0.5
                     }
                 ]
+            },
+			{ code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
+            {
+                code: "useinventory",
+                animation: "eat",
+                animationSpeed: 0.75,
+                priority: 1.6,
+                priorityForCancel: 1.7,
+                eatItemCategories: ["Vegetable", "Grain", "Fruit"],
+                eatItemCodes: [ "drygrass", "hay" ],
+                useTime: 1.5,
+                mincooldownHours: 1,
+                maxcooldownHours: 1.5
             },
             {
                 code: "pettable",

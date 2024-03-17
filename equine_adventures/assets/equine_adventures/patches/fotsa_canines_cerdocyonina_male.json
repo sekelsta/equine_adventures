@@ -1,0 +1,224 @@
+[
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/0/entityCodesByType/*-chrysocyon-brachyurus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/0/entityCodesByType/*-dusicyon-australis/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/0/entityCodesByType/*-dusicyon-avus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/0/entityCodesByType/*-speothos-pacivorus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/1/entityCodesByType/*/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-atelocynus-microtis/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-cerdocyon-thous/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-chrysocyon-brachyurus/-",
+        value: "equine-*-male-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-dusicyon-australis/-",
+        value: "equine-*-male-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-dusicyon-avus/-",
+        value: "equine-*-male-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-lycalopex-*/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-speothos-pacivorus/-",
+        value: "equine-*-male-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-speothos-venaticus/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-atelocynus-microtis/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-cerdocyon-thous/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-chrysocyon-brachyurus/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-chrysocyon-brachyurus/-",
+        value: "equine-*-yearling"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-dusicyon-australis/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-dusicyon-australis/-",
+        value: "equine-*-yearling"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-dusicyon-avus/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-dusicyon-avus/-",
+        value: "equine-*-yearling"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-lycalopex-*/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-speothos-pacivorus/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-speothos-pacivorus/-",
+        value: "equine-*-yearling"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-speothos-venaticus/-",
+        value: "equine-*-adult"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-speothos-venaticus/-",
+        value: "equine-*-yearling"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/4/entityCodesByType/*-chrysocyon-brachyurus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/4/entityCodesByType/*-dusicyon-australis/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/4/entityCodesByType/*-dusicyon-avus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/4/entityCodesByType/*-speothos-pacivorus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/5/entityCodesByType/*-chrysocyon-brachyurus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/5/entityCodesByType/*-dusicyon-australis/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/5/entityCodesByType/*-dusicyon-avus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/5/entityCodesByType/*-speothos-pacivorus/-",
+        value: "equine-*-foal"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/7/entityCodesByType/*/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/17/stopOnNearbyEntityCodes/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/cerdocyonina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/18/stopOnNearbyEntityCodes/-",
+        value: "equine-*"
+    },
+]

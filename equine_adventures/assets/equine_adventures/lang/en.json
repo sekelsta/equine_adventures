@@ -1,5 +1,6 @@
 {
     "creaturegroup-equine": "Equine",
+    "infotext-bond": "Bond ({playerName}): familiarity {familiarity}%, opinion {opinion}",
     "item-creature-equine-horse-tarpan-male-adult": "Horse stallion",
     "item-creature-equine-horse-takhi-male-adult": "Takhi stallion",
     "item-creature-equine-ass-donkey-male-adult": "Jack donkey",

@@ -3,37 +3,37 @@
         file: "game:entities/land/bear.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodesByType/*/-",
-        value: "equine_adventures:equine-*"
+        value: "equine-*"
     },
     {
         file: "game:entities/land/bear.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/*/-",
-        value: "equine_adventures:equine-*"
+        value: "equine-*"
     },
     {
         file: "game:entities/land/wolf-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/0/entityCodes/-",
-        value: "equine_adventures:equine-*"
+        value: "equine-*"
     },
     {
         file: "game:entities/land/wolf-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodes/-",
-        value: "equine_adventures:equine-*"
+        value: "equine-*"
     },
     {
         file: "game:entities/land/wolf-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodes/-",
-        value: "equine_adventures:equine-*"
+        value: "equine-*"
     },
     {
         file: "game:entities/land/wolf-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodes/-",
-        value: "equine_adventures:equine-*"
+        value: "equine-*"
     },
     {
         file: "game:entities/land/hyena-female.json",
@@ -61,7 +61,7 @@
         path: "/server/behaviors/10/aitasks/-",
         value:  {
                     code: "meleeattack",
-                    entityCodes: ["equine_adventures:equine-*"],
+                    entityCodes: ["equine-*"],
                     priority: 2,
                     damage: 8,
                     damageTier: 2,
@@ -82,7 +82,7 @@
         path: "/server/behaviors/10/aitasks/-",
         value:  {
                     code: "seekentity",
-                    entityCodes: ["equine_adventures:equine-*"],
+                    entityCodes: ["equine-*"],
                     priority: 1.5,
                     movespeed: 0.045,
                     seekingRange: 15,
@@ -103,7 +103,7 @@
         path: "/server/behaviors/9/aitasks/-",
         value:  {
                     code: "meleeattack",
-                    entityCodes: ["equine_adventures:equine-*"],
+                    entityCodes: ["equine-*"],
                     priority: 2,
                     damage: 8,
                     damageTier: 2,
@@ -124,7 +124,7 @@
         path: "/server/behaviors/9/aitasks/-",
         value:  {
                     code: "seekentity",
-                    entityCodes: ["equine_adventures:equine-*"],
+                    entityCodes: ["equine-*"],
                     priority: 1.5,
                     movespeed: 0.045,
                     seekingRange: 15,
@@ -138,5 +138,11 @@
                     sound: "creature/hyena/growl",
                     whenNotInEmotionState: "saturated"
                 },
+    },
+    {
+        file: "game:entities/land/fox.json",
+        op: "add",
+        path: "/server/behaviors/11/aitasks/3/entityCodes/*/-",
+        value: "equine-*"
     },
 ]
