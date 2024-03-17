@@ -142,7 +142,7 @@
     {
         file: "game:entities/land/fox.json",
         op: "add",
-        path: "/server/behaviors/11/aitasks/3/entityCodes/*/-",
+        path: "/server/behaviors/11/aitasks/3/entityCodes/-",
         value: "equine-*"
     },
 ]

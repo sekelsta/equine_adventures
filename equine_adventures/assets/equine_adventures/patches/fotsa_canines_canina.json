@@ -104,13 +104,25 @@
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
-        path: "/server/behaviors/9/aitasks/3/entityCodesByType/@.*-(dirus|lupus|lupusarctos|lycaon|rufus|pictus|alpinus)/-",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/canina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/3/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
         value: "equine-*"
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
-        path: "/server/behaviors/10/aitasks/4/entityCodesByType/@.*-(dirus|lupus|lupusarctos|lycaon|rufus|pictus|alpinus)/-",
+        path: "/server/behaviors/10/aitasks/4/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/canina-female.json",
+        op: "add",
+        path: "/server/behaviors/10/aitasks/4/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
         value: "equine-*"
     },
     {
@@ -128,13 +140,25 @@
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
-        path: "/server/behaviors/9/aitasks/4/entityCodesByType/@.*-(dirus|lupus|lupusarctos|lycaon|rufus|pictus|alpinus)/-",
+        path: "/server/behaviors/9/aitasks/4/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/canina-male.json",
+        op: "add",
+        path: "/server/behaviors/9/aitasks/4/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
         value: "equine-*"
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
-        path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(dirus|lupus|lupusarctos|lycaon|rufus|pictus|alpinus)/-",
+        path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
+        value: "equine-*"
+    },
+    {
+        file: "caninae:entities/land/canina-female.json",
+        op: "add",
+        path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
         value: "equine-*"
     },
     {
