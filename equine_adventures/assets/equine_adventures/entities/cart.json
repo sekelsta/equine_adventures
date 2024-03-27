@@ -4,7 +4,6 @@
 	variantgroups: [
 		{ code: "type", states: ["sulky"] },
 		{ code: "woodbase", states: ["aged"], loadFromProperties: "block/wood" },
-		{ code: "woodwheel", states: ["aged"], loadFromProperties: "block/wood" },
 		{ code: "metal", states: ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"] }
 	],
 	hitboxSize: { x: 2, y: 0.6, z: 2.0 },
@@ -16,7 +15,7 @@
 		},
 		textures: {
 			"woodbase": { base: "game:block/wood/debarked/{woodbase}" },
-			"woodwheel": { base: "game:block/wood/debarked/{woodwheel}" },
+			"woodwheel": { base: "game:block/wood/debarked/{woodbase}" },
 			"metal": { base: "game:block/metal/plate/{metal}" }
 		},
 		behaviors: [

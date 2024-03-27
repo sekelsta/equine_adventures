@@ -7,5 +7,5 @@
 	},
 	width: 3,
 	height: 3,
-	output: { type: "item", code: "equine_Adventures:sulky-{wood}-{metal}", quantity: 2 }
+	output: { type: "item", code: "equine_adventures:cart-sulky-{wood}-{metal}", quantity: 2 }
 }

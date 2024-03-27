@@ -21,7 +21,7 @@
     },
     drops: [],
     attributes: {
-        killedByInfoText: "deadcreature-killed",
+        killedByInfoText: "equine_adventures:deadcreature-hoofkicked",
         creatureDiet: {
             foodCategories: ["Vegetable", "Grain", "Fruit"],
             foodTags: ["nibbleCrop", "grass"],
@@ -69,7 +69,7 @@
             { code: "floatupwhenstuck", onlyWhenDead: true },
             { code: "playerbondable" },
 			{ code: "multiply", enabledByType: { "*-female-adult": true, "*": false } },
-            { code: "harvestable" },
+            { code: "detailedharvestable" },
             { code: "despawn", minPlayerDistance: 16, belowLightLevel: 2, "minSeconds": 900 },
 			{ code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
 			{ code: "ropetieable", minGeneration: 2 },
@@ -226,7 +226,7 @@
             },
             { code: "playerbondable" },
             {
-                code: "harvestable",
+                code: "detailedharvestable",
                 drops: [
                     {
                         type: "item",
@@ -395,6 +395,10 @@
                         entityCodes: [ "player", "wolf-*", "bear-*", "hyena-*", "fox-*", "caninae-*", "machairodontinae-*", "pantherinae-*", "varanus-*", "blackrat", "chainviper", "coachwhip", "pitviper" ],
                         priority: 3,
                         damageByType: {
+                            "equine-zebra-*-male-adult": 8,
+                            "equine-zebra-*-female-adult": 6,
+                            "equine-zebra-*-male-yearling": 5,
+                            "equine-zebra-*-female-yearling": 4,
                             "equine-*-male-adult": 6,
                             "equine-*-female-adult": 4,
                             "equine-*-male-yearling": 4,
@@ -727,7 +731,7 @@
                         "*": 40
                     },
                     minRainByType: {
-                        "*-imperial-*": 0.1,
+                        "*-imperial-*": 0.05,
                         "*": 0.25
                     },
                     minForestOrShrubs: 0.0,
@@ -738,7 +742,6 @@
                     },
                     minYByType: {
                         "*-mountain-*": 1.2,
-                        "*-imperial-*": 1.0,
                         "*": 0.9
                     },
                     maxYByType: {
