@@ -12,13 +12,12 @@
 	},
 	textures: {
 		"woodbase": { base: "game:block/wood/debarked/{woodbase}" },
-		"woodwheel": { base: "game:block/wood/debarked/{woodwheel}" },
+		"woodwheel": { base: "game:block/wood/debarked/{woodbase}" },
 		"metal": { base: "game:block/metal/plate/{metal}" }
 	},
 	heldTpIdleAnimation: "holdunderarm",
 	maxstacksize: 1,
 	materialDensity: 1,
-	liquidSelectable: 1,
 	creativeinventory: { "general": ["*"], "items": ["*"], "tools": ["*"] },
 	guiTransform: {
 		translation: { x: 4.0, y: 7.0, z: 0.0 },
