@@ -72,7 +72,7 @@ namespace EquineAdventures {
             int poundsRounded = 10 * (int)Math.Round(weightPounds / 10);
             string unitsSuffix = EquineAdventures.Config.WeightSuffix();
             string conditionKey = "equine_adventures:infotext-bodycondition" + bodyScore.ToString() + "-male";//TODO. See entity.Properties.Variant
-            string text = Lang.Get("equine_adventures:infotext-conditionweight" + unitsSuffix)
+            string text = Lang.GetUnformatted("equine_adventures:infotext-conditionweight" + unitsSuffix)
                 .Replace("{condition}", Lang.Get(conditionKey))
                 .Replace("{pounds}", poundsRounded.ToString())
                 .Replace("{kilograms}", kilogramsRounded.ToString());

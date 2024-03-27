@@ -127,7 +127,7 @@ namespace EquineAdventures {
                     opinionString = "+" + opinionString;
                 }
                 if (player != null) {
-                    string text = Lang.Get("equine_adventures:infotext-bond")
+                    string text = Lang.GetUnformatted("equine_adventures:infotext-bond")
                         .Replace("{playerName}", player.PlayerName)
                         .Replace("{familiarity}", ((int)Familiarity(player)).ToString())
                         .Replace("{opinion}", opinionString);
