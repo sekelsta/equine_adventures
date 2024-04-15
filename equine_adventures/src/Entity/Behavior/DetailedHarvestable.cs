@@ -79,6 +79,12 @@ namespace EquineAdventures {
             infotext.AppendLine(text);
         }
 
+        public override void OnEntityDespawn(EntityDespawnData despawn)
+        {
+            base.OnEntityDespawn(despawn);
+            entity.World.UnregisterGameTickListener(this.listenerID);
+        }
+
         public override string PropertyName() => "detailedharvestable";
     }
 }

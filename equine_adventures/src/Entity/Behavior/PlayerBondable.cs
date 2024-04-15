@@ -8,15 +8,30 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
+using Vintagestory.GameContent;
 
 namespace EquineAdventures {
     public class PlayerBondable : EntityBehavior {
+        public static readonly int MAX_PLAYER_MEMORY = 8;
+        private static readonly float MAX_DISTANT_FAMILIARITY = 20f;
+        private static readonly float NEAR_DISTANCE = 20f;
+        private static readonly float FAR_DISTANCE = 20f;
+        private static readonly float FAMILIARITY_GAIN_RATE = 0.1f;
+        private static readonly double FORGET_HOURS = 72;
+        private static readonly float FORGET_RATE = FAMILIARITY_GAIN_RATE;
+
+        private long slowTickListenerID;
+        private int verySlowTick;
+        private EntityPartitioning partitionUtil;
+
         public PlayerBondable(Entity entity)
           : base(entity)
         {
+            int frequency = 30000; // Milliseconds
+            slowTickListenerID = entity.World.RegisterGameTickListener(new Action<float>(slowTick), frequency);
+            partitionUtil = entity.Api.ModLoader.GetModSystem<EntityPartitioning>();
+            verySlowTick = entity.Api.World.Rand.Next(1024);
         }
-
-        public static readonly int MAX_PLAYER_MEMORY = 8;
 
         public ITreeAttribute playerRelations
         {
@@ -88,6 +103,18 @@ namespace EquineAdventures {
             Familiarity(player, val + Familiarity(player));
         }
 
+        public double LastSeen(IPlayer player) {
+            ITreeAttribute relation = RelationWith(player);
+            if (relation == null) {
+                return 0;
+            }
+            return relation.GetFloat("lastseen", 0);
+        }
+
+        public void MarkSeen(IPlayer player) {
+            GetOrCreateRelation(player).SetDouble("lastseen", entity.World.Calendar.TotalHours);
+        }
+
         public float Opinion(IPlayer player) {
             ITreeAttribute relation = RelationWith(player);
             if (relation == null) {
@@ -134,26 +161,60 @@ namespace EquineAdventures {
                     infotext.AppendLine(text);
                 }
             }
-            // FOrmat: Bond (playername): familiarity: X%, opinion: +-Y, obedience: Z
             base.GetInfoText(infotext);
         }
 
+        protected void slowTick(float deltaTime) {
+            verySlowTick += 1;
+            float searchRadius = NEAR_DISTANCE;
+            if (verySlowTick % 5 == 0) {
+                searchRadius = FAR_DISTANCE;
+            }
+            partitionUtil.WalkInteractableEntities(entity.Pos.XYZ, searchRadius, (ActionConsumable<Entity>)(e => {
+                    // TODO: Cancel if sleeping
+                    if (!(e is EntityPlayer)) {
+                        return true;
+                    }
+                    IPlayer player = (e as EntityPlayer).Player;
+                    if (entity.ServerPos.SquareDistanceTo(e.ServerPos) > NEAR_DISTANCE * NEAR_DISTANCE 
+                            && Familiarity(player) >= MAX_DISTANT_FAMILIARITY) {
+                        return true;
+                    }
+                    AddFamiliarity(player, FAMILIARITY_GAIN_RATE); // TODO: This increases familiarity much faster than expected
+                    return false;
+                }
+            ));
+            if (verySlowTick % 8 == 0) {
+                foreach (var pair in playerRelations) {
+                    TreeAttribute tree = pair.Value as TreeAttribute;
+                    double timeSinceSeen = entity.World.Calendar.TotalHours - tree.GetFloat("lastseen", 0);
+                    if (timeSinceSeen > FORGET_HOURS) {
+                        float forgetAmount = FORGET_RATE;
+                        if (timeSinceSeen > 2 * FORGET_HOURS) {
+                            forgetAmount *= 2;
+                        }
+                        tree.SetFloat("familiarity", (float)Math.Max(0, tree.GetFloat("familiarity", 0) - forgetAmount));
+                    }
+                }
+            }
+            
+        }
+
         public override void OnInteract(EntityAgent byEntity, ItemSlot itemSlot, Vec3d hitPosition, EnumInteractMode mode, ref EnumHandling handled) {
-            // TODO
+            if (byEntity is EntityPlayer) {
+                IPlayer player = (byEntity as EntityPlayer).Player;
+                // TODO: Gain familiarity depending on the item and stuff
+                MarkSeen(player);
+            }
+            base.OnInteract(byEntity, itemSlot, hitPosition, mode, ref handled);
+        }
+
+        public override void OnEntityDespawn(EntityDespawnData despawn)
+        {
+            base.OnEntityDespawn(despawn);
+            entity.World.UnregisterGameTickListener(this.slowTickListenerID);
         }
 
         public override string PropertyName() => "playerbondable";
-
-        // TODO: Store bonding data, per player ID
-        // Bonding data: familiarity, opinion, obedience
-        // Familiarity: self-explanatory
-        // Opinion: expected value of next interaction
-        // Obedience: self-explanatory
-        // TODO: Store bond amount with each player, plus the default. Raise and lower it as appropriate
-        // Raise it every once in a while if the player is nearby
-        // Raise it if fed a treat
-        // Lower it over time, in some carefully managed way that never drops too low (maybe * 0.99f?)
-        // OK to use player's EntityID as a key, because it will persist between sessions
-        // Store data for max 8 players: 7 highest (by familiarity) + 1 newest
     }
 }
