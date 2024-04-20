@@ -15,21 +15,21 @@ namespace EquineAdventures {
         public static readonly int MAX_PLAYER_MEMORY = 8;
         private static readonly float MAX_DISTANT_FAMILIARITY = 20f;
         private static readonly float NEAR_DISTANCE = 20f;
-        private static readonly float FAR_DISTANCE = 20f;
+        private static readonly float FAR_DISTANCE = 60f;
         private static readonly float FAMILIARITY_GAIN_RATE = 0.1f;
         private static readonly double FORGET_HOURS = 72;
         private static readonly float FORGET_RATE = FAMILIARITY_GAIN_RATE;
+        private static readonly double SEARCH_FREQUENCY_HOURS = 0.25;
 
-        private long slowTickListenerID;
+        private double nextSearchTime;
         private int verySlowTick;
         private EntityPartitioning partitionUtil;
 
         public PlayerBondable(Entity entity)
           : base(entity)
         {
-            int frequency = 30000; // Milliseconds
-            slowTickListenerID = entity.World.RegisterGameTickListener(new Action<float>(slowTick), frequency);
             partitionUtil = entity.Api.ModLoader.GetModSystem<EntityPartitioning>();
+            nextSearchTime = entity.Api.World.Calendar.TotalHours + entity.Api.World.Rand.NextDouble() * SEARCH_FREQUENCY_HOURS;
             verySlowTick = entity.Api.World.Rand.Next(1024);
         }
 
@@ -164,7 +164,14 @@ namespace EquineAdventures {
             base.GetInfoText(infotext);
         }
 
-        protected void slowTick(float deltaTime) {
+        public override void OnGameTick(float deltaTime) {
+            if (nextSearchTime < entity.Api.World.Calendar.TotalHours) {
+                slowTick(nextSearchTime);
+                nextSearchTime += SEARCH_FREQUENCY_HOURS;
+            }
+        }
+
+        protected void slowTick(double updateTime) {
             verySlowTick += 1;
             float searchRadius = NEAR_DISTANCE;
             if (verySlowTick % 5 == 0) {
@@ -180,14 +187,14 @@ namespace EquineAdventures {
                             && Familiarity(player) >= MAX_DISTANT_FAMILIARITY) {
                         return true;
                     }
-                    AddFamiliarity(player, FAMILIARITY_GAIN_RATE); // TODO: This increases familiarity much faster than expected
+                    AddFamiliarity(player, FAMILIARITY_GAIN_RATE);
                     return false;
                 }
             ));
             if (verySlowTick % 8 == 0) {
                 foreach (var pair in playerRelations) {
                     TreeAttribute tree = pair.Value as TreeAttribute;
-                    double timeSinceSeen = entity.World.Calendar.TotalHours - tree.GetFloat("lastseen", 0);
+                    double timeSinceSeen = updateTime - tree.GetFloat("lastseen", 0);
                     if (timeSinceSeen > FORGET_HOURS) {
                         float forgetAmount = FORGET_RATE;
                         if (timeSinceSeen > 2 * FORGET_HOURS) {
@@ -197,7 +204,6 @@ namespace EquineAdventures {
                     }
                 }
             }
-            
         }
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot itemSlot, Vec3d hitPosition, EnumInteractMode mode, ref EnumHandling handled) {
@@ -207,12 +213,6 @@ namespace EquineAdventures {
                 MarkSeen(player);
             }
             base.OnInteract(byEntity, itemSlot, hitPosition, mode, ref handled);
-        }
-
-        public override void OnEntityDespawn(EntityDespawnData despawn)
-        {
-            base.OnEntityDespawn(despawn);
-            entity.World.UnregisterGameTickListener(this.slowTickListenerID);
         }
 
         public override string PropertyName() => "playerbondable";

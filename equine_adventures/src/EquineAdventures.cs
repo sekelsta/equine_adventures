@@ -3,6 +3,7 @@ using System;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 
 namespace EquineAdventures
 {
@@ -15,6 +16,9 @@ namespace EquineAdventures
         {
             api.RegisterEntityBehaviorClass("playerbondable", typeof(PlayerBondable));
             api.RegisterEntityBehaviorClass("detailedharvestable", typeof(DetailedHarvestable));
+            api.RegisterEntityBehaviorClass("reproduce", typeof(Reproduce));
+            api.RegisterEntityBehaviorClass("herbivorehunger", typeof(HerbivoreHunger));
+            AiTaskRegistry.Register("forage", typeof (AiTaskForage));
 
             try {
                 Config = api.LoadModConfig<EquineConfig>("equine_adventures_config.json");

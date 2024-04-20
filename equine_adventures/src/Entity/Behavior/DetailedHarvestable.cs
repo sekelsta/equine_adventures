@@ -17,7 +17,7 @@ using Vintagestory.API.Util;
 
 namespace EquineAdventures {
     public class DetailedHarvestable : EntityBehaviorHarvestable {
-        private long listenerID;
+        private float baseWeightKg; // TODO: Make final weight depend on age and pregnancy status
 
         public DetailedHarvestable(Entity entity)
           : base(entity)
@@ -28,8 +28,7 @@ namespace EquineAdventures {
             JsonObject editedTypeAttributes = typeAttributes.Clone();
             editedTypeAttributes.Token["fixedweight"] = true;
             base.Initialize(properties, editedTypeAttributes);
-            int frequency = 3000;
-            listenerID = entity.World.RegisterGameTickListener(new Action<float>(SlowTick), frequency);
+            baseWeightKg = typeAttributes["weightKg"].AsFloat(200f);
         }
 
         public override void AfterInitialized(bool onFirstSpawn) {
@@ -41,17 +40,53 @@ namespace EquineAdventures {
             }
         }
 
-        public override void OnGameTick(float deltaTime) {
-            // Do nothing. Don't call base method. Don't reset AnimalWeight to 1.
+        private void shiftWeight(float delta) {
+            if (entity.WatchedAttributes.GetTreeAttribute("hunger") == null) {
+                entity.WatchedAttributes["hunger"] = new TreeAttribute();
+            }
+            ITreeAttribute hungerTree = entity.WatchedAttributes.GetTreeAttribute("hunger");
+            hungerTree.SetFloat("saturation", hungerTree.GetFloat("saturation", 0f) - delta);
+            entity.WatchedAttributes.MarkPathDirty("hunger");
+            float conversion = 0.2f; // TODO: Set a reasonable value
+            // Inefficiency
+            conversion *= delta > 0 ? 0.99f : 1.01f;
+            AnimalWeight = (float)Math.Clamp(AnimalWeight + delta * conversion, 0.5f, 2f);
         }
 
-        protected void SlowTick(float deltaTime) {
-            // TODO: Weight change logic here
+        public override void OnGameTick(float deltaTime) {
+            // Don't call base method. Don't reset AnimalWeight to 1.
+
+            double updateTime = LastWeightUpdateTotalHours;
+            double updateFrequencyHours = 2;
+            while (updateTime + updateFrequencyHours < entity.World.Calendar.TotalHours) {
+                updateTime += updateFrequencyHours;
+                ITreeAttribute hungerTree = entity.WatchedAttributes.GetTreeAttribute("hunger");
+                float saturation = hungerTree == null ? 0f : hungerTree.GetFloat("saturation");
+                float maxSaturation = 16f;
+                if (hungerTree != null) {
+                    maxSaturation = hungerTree.GetFloat("maxsaturation", maxSaturation);
+                }
+                float fullness = saturation / maxSaturation;
+                float s = 0.05f * maxSaturation;
+                if (fullness < 0.1f) {
+                    shiftWeight(-1 * s);
+                }
+                else if (fullness > 0.9f) {
+                    shiftWeight(s);
+                }
+                else if (AnimalWeight < 1 && fullness > 0.2f) {
+                    shiftWeight(s);
+                }
+                else if (AnimalWeight > 1 && fullness < 0.8f) {
+                    shiftWeight(-1 * s);
+                }
+            }
+            LastWeightUpdateTotalHours = updateTime;
         }
 
         public override void GetInfoText(StringBuilder infotext) {
             base.GetInfoText(infotext);
-            double[] conditionBoundaries = new double[] {-0.18, -0.12, -0.072, -0.036, 0.036, 0.072, 0.12, 0.18};
+            double[] conditionBoundaries = new double[] {-0.3, -0.15, -0.072, -0.036, 0.036, 0.072, 0.15, 0.3};
             int bodyScore = 1;
             foreach (double b in conditionBoundaries) {
                 if (AnimalWeight > 1 + b) {
@@ -63,10 +98,9 @@ namespace EquineAdventures {
             }
             Debug.Assert(bodyScore >= 1);
             Debug.Assert(bodyScore <= 9);
-            // TODO
-            double weightKilograms = 503.45;
+
+            double weightKilograms = AnimalWeight * baseWeightKg;
             double weightPounds = weightKilograms * 2.20462;
-            // Also TODO: This should depend on age
 
             int kilogramsRounded = 5 * (int)Math.Round(weightKilograms / 5);
             int poundsRounded = 10 * (int)Math.Round(weightPounds / 10);
@@ -77,12 +111,6 @@ namespace EquineAdventures {
                 .Replace("{pounds}", poundsRounded.ToString())
                 .Replace("{kilograms}", kilogramsRounded.ToString());
             infotext.AppendLine(text);
-        }
-
-        public override void OnEntityDespawn(EntityDespawnData despawn)
-        {
-            base.OnEntityDespawn(despawn);
-            entity.World.UnregisterGameTickListener(this.listenerID);
         }
 
         public override string PropertyName() => "detailedharvestable";
