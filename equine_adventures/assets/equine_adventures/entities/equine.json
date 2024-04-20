@@ -432,13 +432,13 @@
 			}, 
 			{ code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
             { 
-                code: "grow", 
+                code: "age", 
                 enabledByType: {
                     "*-foal": true,
                     "*-yearling": true,
                     "*-adult": false
                 },
-                hoursToGrow: 2592,
+                monthsToGrow: 12.0,
                 adultEntityCodesByType: {
                     "*-foal": ["equine_adventures:equine-{type}-{gender}-yearling"],
                     "*-yearling": ["equine_adventures:equine-{type}-{gender}-adult"]

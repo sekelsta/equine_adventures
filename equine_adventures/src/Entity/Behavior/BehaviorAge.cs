@@ -12,9 +12,9 @@ namespace EquineAdventures {
         JsonObject typeAttributes;
         long callbackId;
 
-        internal float HoursToGrow { get; set; }
+        public float HoursToGrow { get; protected set; }
 
-        internal AssetLocation[] AdultEntityCodes {
+        public AssetLocation[] AdultEntityCodes {
             get { return AssetLocation.toLocations(typeAttributes["adultEntityCodes"].AsArray<string>(new string[0])); }
         }
 
@@ -24,14 +24,19 @@ namespace EquineAdventures {
         }
 
 
-
         public BehaviorAge(Entity entity) : base(entity) { }
 
         public override void Initialize(EntityProperties properties, JsonObject typeAttributes) {
             base.Initialize(properties, typeAttributes);
-
             this.typeAttributes = typeAttributes;
-            HoursToGrow = typeAttributes["hoursToGrow"].AsFloat(96);
+
+            if (typeAttributes.KeyExists("monthsToGrow")) {
+                HoursToGrow = typeAttributes["monthsToGrow"].AsFloat() 
+                    * entity.World.Calendar.DaysPerMonth * entity.World.Calendar.HoursPerDay;
+            }
+            else {
+                HoursToGrow = typeAttributes["hoursToGrow"].AsFloat(96);
+            }
 
             growTree = entity.WatchedAttributes.GetTreeAttribute("grow");
 
@@ -76,31 +81,13 @@ namespace EquineAdventures {
 
                 entity.Die(EnumDespawnReason.Expire, null);
                 entity.World.SpawnEntity(adult);
-                bool keepTexture = adult.WatchedAttributes.HasAttribute("textureIndex") 
-                    && entity.Properties.Client?.FirstTexture?.Alternates != null 
-                    && adultType.Client?.FirstTexture?.Alternates != null 
-                    && entity.Properties.Client.FirstTexture.Alternates.Length == adultType.Client.FirstTexture.Alternates.Length;
-
-                if (entity.WatchedAttributes.HasAttribute("domesticationstatus")) {
-                    adult.WatchedAttributes.SetAttribute("domesticationstatus", entity.WatchedAttributes.GetAttribute("domesticationstatus"));
-                }
-
-                adult.GetBehavior<EntityBehaviorNameTag>()?.SetName(entity.GetBehavior<EntityBehaviorNameTag>()?.DisplayName);
-
-                if (keepTexture) {
-                    //Attempt to not change the texture during growing up
-                    adult.WatchedAttributes.SetInt("textureIndex", entity.WatchedAttributes.GetInt("textureIndex", 0));
-                }/* TODO: Add this back if it can be done without creating a hard dependency on PetAI
-                if (entity is EntityPet childPet && adult is EntityPet adultPet) {
-                    for (int i = 0; i < childPet.GearInventory.Count; i++) {
-                        childPet.GearInventory[i].TryPutInto(entity.World, adultPet.GearInventory[i]);
-                    }
-                }*/
+                CopyAttributesTo(adult);
             }
             else {
                 callbackId = entity.World.RegisterCallback(CheckGrowth, 3000);
                 double age = entity.World.Calendar.TotalHours - TimeSpawned;
                 if (age >= 0.1 * HoursToGrow) {
+                    // Used for drawing the critter larger over time if SizeGrowthFactor is nonzero
                     float newAge = (float)(age / HoursToGrow - 0.1);
                     if (newAge >= 1.01f * growTree.GetFloat("age")) {
                         growTree.SetFloat("age", newAge);
@@ -110,6 +97,29 @@ namespace EquineAdventures {
             }
 
             entity.World.FrameProfiler.Mark("entity-checkgrowth");
+        }
+
+        protected virtual void CopyAttributesTo(Entity adult) {
+            bool keepTexture = adult.WatchedAttributes.HasAttribute("textureIndex") 
+                && entity.Properties.Client?.FirstTexture?.Alternates != null 
+                && adult.Properties.Client?.FirstTexture?.Alternates != null 
+                && entity.Properties.Client.FirstTexture.Alternates.Length == adult.Properties.Client.FirstTexture.Alternates.Length;
+
+            if (entity.WatchedAttributes.HasAttribute("domesticationstatus")) {
+                adult.WatchedAttributes.SetAttribute("domesticationstatus", entity.WatchedAttributes.GetAttribute("domesticationstatus"));
+            }
+
+            adult.GetBehavior<EntityBehaviorNameTag>()?.SetName(entity.GetBehavior<EntityBehaviorNameTag>()?.DisplayName);
+
+            if (keepTexture) {
+                //Attempt to not change the texture during growing up
+                adult.WatchedAttributes.SetInt("textureIndex", entity.WatchedAttributes.GetInt("textureIndex", 0));
+            }/* TODO: Add this back if it can be done without creating a hard dependency on PetAI
+            if (entity is EntityPet childPet && adult is EntityPet adultPet) {
+                for (int i = 0; i < childPet.GearInventory.Count; i++) {
+                    childPet.GearInventory[i].TryPutInto(entity.World, adultPet.GearInventory[i]);
+                }
+            }*/
         }
 
         public override void OnEntityDespawn(EntityDespawnData despawn) {
