@@ -1,5 +1,5 @@
 {
-    "creaturegroup-equine": "Equine",
+    "game:creaturegroup-equine": "Equine",
     "deadcreature-hoofkicked": "Killed by another creature. Broken bones and hoof-shaped bruises.",
     "infotext-bond": "Bond ({playerName}): familiarity {familiarity}%, opinion {opinion}",
     "infotext-bodycondition1-male": "Skin and bones",

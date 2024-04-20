@@ -1,5 +1,5 @@
 {
-    "creaturegroup-equine": "Equino",
+    "game:creaturegroup-equine": "Equino",
     "deadcreature-hoofkicked": "Asesinado por otra criatura. Huesos rotos y hematomas en forma de pezuñas.",
     "infotext-bond": "Vínculo ({playerName}): familiaridad {familiarity}%, opinión {opinion}",
     "infotext-bodycondition1-male": "Piel y huesos",
