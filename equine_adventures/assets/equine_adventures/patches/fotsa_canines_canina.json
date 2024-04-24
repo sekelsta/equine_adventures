@@ -3,222 +3,296 @@
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodesByType/@.*-(dirus|lupus|lupusarctos|lycaon|rufus|pictus|alpinus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/0/entityCodesByType/@.*-(dirus|lupus|lupusarctos|lycaon|rufus|pictus|alpinus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodesByType/@.*-(latrans|lupusdingo)/-",
-        value: "equine-*-foal"
+        value: "equine-*-foal",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/0/entityCodesByType/@.*-(latrans|lupusdingo)/-",
-        value: "equine-*-foal"
+        value: "equine-*-foal",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/1/entityCodesByType/@.*-(dirus|aureus|latrans|lupastor|lupus|lupusarctos|lupusdingo|lycaon|rufus|simensis|alpinus|sardous|adusta|mesomelas|pictus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/1/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/1/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/1/entityCodesByType/@.*-(latrans|lupusdingo|pictus)/-",
-        value: "equine-*-male-adult"
+        value: "equine-*-male-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/@.*-(latrans|lupusdingo|pictus)/-",
-        value: "equine-*-male-adult"
+        value: "equine-*-male-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/@.*-(aureus|lupastor|simensis|alpinus|sardous|adusta|mesomelas)/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/@.*-(latrans|lupusdingo|pictus)/-",
-        value: "equine-*-male-adult"
+        value: "equine-*-male-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/@.*-(latrans|lupusdingo|pictus)/-",
-        value: "equine-*-male-adult"
+        value: "equine-*-male-adult",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/@.*-(latrans|lupusdingo)/-",
-        value: "equine-*-foal"
+        value: "equine-*-foal",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/entityCodesByType/@.*-(latrans|lupusdingo)/-",
-        value: "equine-*-foal"
+        value: "equine-*-foal",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/4/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/4/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(dirus|lupus|lupusarctos)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(lycaon|rufus|pictus|alpinus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/4/entityCodesByType/@.*-(latrans|lupusdingo)/-",
-        value: "equine-*-foal"
+        value: "equine-*-foal",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(latrans|lupusdingo)/-",
-        value: "equine-*-foal"
+        value: "equine-*-foal",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/5/entityCodesByType/@.*-(dirus|aureus|latrans|lupastor|lupus|lupusarctos|lupusdingo|lycaon|rufus|simensis|alpinus|sardous|adusta|mesomelas|pictus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/6/entityCodesByType/@.*-(dirus|aureus|latrans|lupastor|lupus|lupusarctos|lupusdingo|lycaon|rufus|simensis|alpinus|sardous|adusta|mesomelas|pictus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/6/entityCodesByType/@.*-(dirus|aureus|latrans|lupastor|lupus|lupusarctos|lupusdingo|lycaon|rufus|simensis|alpinus|sardous|adusta|mesomelas|pictus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/7/entityCodesByType/@.*-(dirus|aureus|latrans|lupastor|lupus|lupusarctos|lupusdingo|lycaon|rufus|simensis|alpinus|sardous|adusta|mesomelas|pictus)/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/18/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/19/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/19/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/20/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
 ]

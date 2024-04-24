@@ -3,96 +3,128 @@
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-urocyon-cinereoargenteus/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/*-urocyon-littoralis/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/*-urocyon-cinereoargenteus/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/*-urocyon-littoralis/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-urocyon-cinereoargenteus/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/*-urocyon-littoralis/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/*-urocyon-cinereoargenteus/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/*-urocyon-littoralis/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/7/entityCodesByType/*-urocyon-cinereoargenteus/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/7/entityCodesByType/*-urocyon-littoralis/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/7/entityCodesByType/*-urocyon-cinereoargenteus/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/7/entityCodesByType/*-urocyon-littoralis/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/19/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/19/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/20/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/20/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
 ]

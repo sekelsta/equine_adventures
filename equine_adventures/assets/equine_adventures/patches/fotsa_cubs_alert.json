@@ -3,132 +3,176 @@
         file: "caninae:entities/land/canina-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/canina-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/11/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/cerdocyonina-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/cerdocyonina-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/urocyonini-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/vulpini-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "caninae:entities/land/vulpini-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "caninae" }]
     },
     {
         file: "machairodontinae:entities/land/machairodontinae-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/7/stopOnNearbyEntityCodes/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "machairodontinae" }]
     },
     {
         file: "machairodontinae:entities/land/machairodontinae-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/8/stopOnNearbyEntityCodes/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "machairodontinae" }]
     },
     {
         file: "machairodontinae:entities/land/machairodontinae-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "machairodontinae" }]
     },
     {
         file: "machairodontinae:entities/land/machairodontinae-baby.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "machairodontinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/7/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/8/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/7/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/8/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-cub.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
 ]

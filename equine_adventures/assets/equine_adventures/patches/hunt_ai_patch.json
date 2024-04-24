@@ -3,37 +3,43 @@
         file: "game:entities/land/bear.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodesByType/*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
     {
         file: "game:entities/land/bear.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
     {
         file: "game:entities/land/wolf-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/0/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
     {
         file: "game:entities/land/wolf-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
     {
         file: "game:entities/land/wolf-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
     {
         file: "game:entities/land/wolf-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
     {
         file: "game:entities/land/hyena-female.json",
@@ -44,6 +50,7 @@
                     belowTempDuration: 600,
                     belowTempThreshold: -5
                 },
+        side: "server"
     },
     {
         file: "game:entities/land/hyena-male.json",
@@ -54,6 +61,7 @@
                     belowTempDuration: 600,
                     belowTempThreshold: -5
                 },
+        side: "server"
     },
     {
         file: "game:entities/land/hyena-female.json",
@@ -75,6 +83,7 @@
                     animationSpeed: 2.5,
                     sound: "creature/hyena/attack"
                 },
+        side: "server"
     },
     {
         file: "game:entities/land/hyena-female.json",
@@ -96,6 +105,7 @@
                     sound: "creature/hyena/growl",
                     whenNotInEmotionState: "saturated"
                 },
+        side: "server"
     },
     {
         file: "game:entities/land/hyena-male.json",
@@ -117,6 +127,7 @@
                     animationSpeed: 2.5,
                     sound: "creature/hyena/attack"
                 },
+        side: "server"
     },
     {
         file: "game:entities/land/hyena-male.json",
@@ -138,11 +149,13 @@
                     sound: "creature/hyena/growl",
                     whenNotInEmotionState: "saturated"
                 },
+        side: "server"
     },
     {
         file: "game:entities/land/fox.json",
         op: "add",
         path: "/server/behaviors/11/aitasks/3/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server"
     },
 ]

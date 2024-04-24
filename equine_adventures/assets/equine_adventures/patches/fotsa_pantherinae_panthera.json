@@ -3,108 +3,144 @@
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/0/entityCodesByType/@.*-(atrox|leo|onca|pardus|spelaea|tigris|uncia)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/0/entityCodesByType/@.*-(atrox|leo|onca|pardus|spelaea|tigris|uncia)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/1/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/1/entityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/5/entityCodesByType/@.*-(atrox|leo|spelaea|tigris)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/5/entityCodesByType/@.*-(onca|pardus)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/5/entityCodesByType/*-uncia-*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(atrox|leo|spelaea|tigris)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/5/entityCodesByType/@.*-(onca|pardus)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/5/entityCodesByType/*-uncia-*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/6/entityCodesByType/@.*-(atrox|leo|spelaea|tigris)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/6/entityCodesByType/@.*-(onca|pardus)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/6/entityCodesByType/*-uncia-*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/6/entityCodesByType/@.*-(atrox|leo|spelaea|tigris)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/6/entityCodesByType/@.*-(onca|pardus)-.*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-panthera-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/6/entityCodesByType/*-uncia-*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
 ]

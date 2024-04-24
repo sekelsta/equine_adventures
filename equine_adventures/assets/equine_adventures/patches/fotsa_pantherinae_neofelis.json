@@ -3,120 +3,160 @@
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/2/entityCodesByType/*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/2/entityCodesByType/*/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/*/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/*/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/3/entityCodesByType/*/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/3/entityCodesByType/*/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/4/entityCodesByType/*/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/entityCodesByType/*/-",
-        value: "equine-*-adult"
+        value: "equine-*-adult",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/4/entityCodesByType/*/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/4/entityCodesByType/*/-",
-        value: "equine-*-yearling"
+        value: "equine-*-yearling",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/9/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/10/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/12/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/13/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/13/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/14/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/14/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/15/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-male.json",
         op: "add",
         path: "/server/behaviors/9/aitasks/15/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
     {
         file: "pantherinae:entities/land/pantherinae-neofelis-female.json",
         op: "add",
         path: "/server/behaviors/10/aitasks/16/stopOnNearbyEntityCodes/-",
-        value: "equine-*"
+        value: "equine-*",
+        side: "server",
+        dependsOn: [{ modid: "pantherinae" }]
     },
 ]
