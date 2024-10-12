@@ -13,8 +13,6 @@ namespace EquineAdventures
         public override void Start(ICoreAPI api)
         {
             api.RegisterEntityBehaviorClass("playerbondable", typeof(PlayerBondable));
-            api.RegisterEntityBehaviorClass("herbivorehunger", typeof(HerbivoreHunger));
-            AiTaskRegistry.Register("forage", typeof (AiTaskForage));
         }
 
         public override void StartServerSide(ICoreServerAPI api)
