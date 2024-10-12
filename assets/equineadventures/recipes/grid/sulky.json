@@ -2,10 +2,10 @@
 	ingredientPattern: "P_P,PPP,WAW",
 	ingredients: {
 		"P": { type: "item", code: "game:plank-*", name: "wood", quantity: 1, skipVariants: ["agedebony", "rottenebony"] },
-		"W": { type: "item", code: "equine_adventures:wheel-*", name: "woodmetal" },
+		"W": { type: "item", code: "equineadventures:wheel-*", name: "woodmetal" },
         "A": { type: "block", code: "game:woodenaxle-ud" }
 	},
 	width: 3,
 	height: 3,
-	output: { type: "item", code: "equine_adventures:cart-sulky-{wood}-{woodmetal}", quantity: 1 }
+	output: { type: "item", code: "equineadventures:cart-sulky-{wood}-{woodmetal}", quantity: 1 }
 }

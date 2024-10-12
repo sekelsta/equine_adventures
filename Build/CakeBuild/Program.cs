@@ -24,8 +24,7 @@ public static class Program
 
 public class BuildContext : FrostingContext
 {
-    public const string ProjectNameCamel = "EquineAdventures";
-    public const string ProjectNameSnake = "equine_adventures";
+    public const string ProjectName = "EquineAdventures";
     public string BuildConfiguration { get; set; }
     public string Version { get; }
     public string Name { get; }
@@ -36,7 +35,7 @@ public class BuildContext : FrostingContext
     {
         BuildConfiguration = context.Argument("configuration", "Release");
         SkipJsonValidation = context.Argument("skipJsonValidation", false);
-        var modInfo = context.DeserializeJsonFromFile<ModInfo>($"../{BuildContext.ProjectNameSnake}/modinfo.json");
+        var modInfo = context.DeserializeJsonFromFile<ModInfo>($"../../modinfo.json");
         Version = modInfo.Version;
         Name = modInfo.ModID;
     }
@@ -51,7 +50,7 @@ public sealed class ValidateJsonTask : FrostingTask<BuildContext>
         {
             return;
         }
-        var jsonFiles = context.GetFiles($"../{BuildContext.ProjectNameSnake}/assets/**/*.json");
+        var jsonFiles = context.GetFiles($"../../assets/**/*.json");
         foreach (var file in jsonFiles)
         {
             try
@@ -73,14 +72,14 @@ public sealed class BuildTask : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        context.DotNetClean($"../{BuildContext.ProjectNameSnake}/{BuildContext.ProjectNameCamel}.csproj",
+        context.DotNetClean($"../../src/{BuildContext.ProjectName}.csproj",
             new DotNetCleanSettings
             {
                 Configuration = context.BuildConfiguration
             });
 
 
-        context.DotNetPublish($"../{BuildContext.ProjectNameSnake}/{BuildContext.ProjectNameCamel}.csproj",
+        context.DotNetPublish($"../../src/{BuildContext.ProjectName}.csproj",
             new DotNetPublishSettings
             {
                 Configuration = context.BuildConfiguration
@@ -97,12 +96,12 @@ public sealed class PackageTask : FrostingTask<BuildContext>
         context.EnsureDirectoryExists("../Releases");
         context.CleanDirectory("../Releases");
         context.EnsureDirectoryExists($"../Releases/{context.Name}");
-        context.CopyFiles($"../{BuildContext.ProjectNameSnake}/bin/{context.BuildConfiguration}/Mods/mod/publish/*", $"../Releases/{context.Name}");
-        context.CopyDirectory($"../{BuildContext.ProjectNameSnake}/assets", $"../Releases/{context.Name}/assets");
-        context.CopyFile($"../{BuildContext.ProjectNameSnake}/modinfo.json", $"../Releases/{context.Name}/modinfo.json");
-        if (context.FileExists($"../{BuildContext.ProjectNameSnake}/modicon.png"))
+        context.CopyFiles($"../../bin/{context.BuildConfiguration}/Mods/mod/publish/*", $"../Releases/{context.Name}");
+        context.CopyDirectory($"../../assets", $"../Releases/{context.Name}/assets");
+        context.CopyFile($"../../modinfo.json", $"../Releases/{context.Name}/modinfo.json");
+        if (context.FileExists($"../../modicon.png"))
         {
-            context.CopyFile($"../{BuildContext.ProjectNameSnake}/modicon.png", $"../Releases/{context.Name}/modicon.png");
+            context.CopyFile($"../../modicon.png", $"../Releases/{context.Name}/modicon.png");
         }
         context.Zip($"../Releases/{context.Name}", $"../Releases/{context.Name}_{context.Version}.zip");
     }

@@ -1,10 +1,10 @@
 {
   "type": "code",
-  "modid": "equine_adventures",
+  "modid": "equineadventures",
   "name": "Equine Adventures",
-  "description" : "Adds horses",
+  "description" : "Adds equines.",
   "authors": ["sekelsta"],
-  "version": "1.0.0",
+  "version": "0.0.0",
   "dependencies": { 
 	"game": "",
 	"survival": "",

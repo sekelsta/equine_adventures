@@ -1,0 +1,49 @@
+{
+    genes: {
+        autosomal: [
+            { dun: [ "dun", "nd1", "nd2" ] },
+            { agouti: ["wildtype", "black"] },
+            { extension: ["wildtype", "red"] },
+            { KIT: ["wildtype"] },
+        ],
+    },
+    initializers: {
+        deepforest: {
+            autosomal: {
+                KIT: { default: "wildtype" },
+                extension: { default: "wildtype" },
+            },
+            conditions: {
+                minForest: 0.6
+            }
+        },
+        verycold: {
+            autosomal: {
+                KIT: { default: "wildtype" },
+                extension: { default: "wildtype", red: 0.4 },
+            },
+            conditions: {
+                maxTemp: 10
+            }
+        },
+        temperate: {
+            autosomal: {
+                KIT: { default: "wildtype" },
+                extension: { default: "wildtype" },
+            },
+            conditions: {
+                minTemp: 9,
+                maxTemp: 19
+            }
+        },
+        tropical: {
+            autosomal: {
+                KIT: { default: "wildtype" },
+                extension: { default: "wildtype" },
+            },
+            conditions: {
+                minTemp: 17
+            }
+        },
+    }
+}

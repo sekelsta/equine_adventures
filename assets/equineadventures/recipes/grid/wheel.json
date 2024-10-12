@@ -6,5 +6,5 @@
 	},
 	width: 3,
 	height: 3,
-	output: { type: "item", code: "equine_adventures:wheel-{wood}-{metal}", quantity: 1  }
+	output: { type: "item", code: "equineadventures:wheel-{wood}-{metal}", quantity: 1  }
 }

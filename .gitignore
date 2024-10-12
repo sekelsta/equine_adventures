@@ -1,5 +1,6 @@
-CakeBuild/bin/
-CakeBuild/obj/
-Releases/
-equine_adventures/bin/
-equine_adventures/obj/
+bin/
+obj/
+src/obj/
+Build/CakeBuild/bin/
+Build/CakeBuild/obj/
+Build/Releases/
