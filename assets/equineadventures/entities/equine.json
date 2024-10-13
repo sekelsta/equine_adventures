@@ -24,8 +24,8 @@
         killedByInfoText: "deadcreature-hoofkicked",
         creatureDiet: {
             foodCategories: ["Vegetable", "Grain", "Fruit"],
-            foodTags: ["nibbleCrop", "grass"],
-            skipFoodTags: ["parsnip", "cassava", "turnip", "cabbage", "onion"]
+            foodTags: ["nibbleCrop", "grass", "vegetable", "foliage", "hay", "fruitmash" ],
+            skipFoodTags: [ "riceCrop", "parsnipCrop", "onion", "cassava" ],
         },
         basketCatchable: true,
         trapChance: 0.0,
@@ -45,19 +45,9 @@
             "equine-zebra-imperial-*": 375,
 
         },
-        weightFractionByType: {
-            "equine-zebra-mountain-male-adult": 1.05,
-            "equine-zebra-mountain-female-adult": 0.95,
-            "equine-zebra-mountain-male-yearling": 0.662,
-            "equine-zebra-mountain-female-yearling": 0.599,
-            "equine-zebra-mountain-male-foal": 0.105,
-            "equine-zebra-mountain-female-foal": 0.095,
-            "*-male-adult": 1.12,
-            "*-female-adult": 0.88,
-            "*-male-yearling": 0.705,
-            "*-female-yearling": 0.5544,
-            "*-male-foal": 0.112,
-            "*-female-foal": 0.088,
+        weightDimorphismByType: {
+            "equine-zebra-mountain-*": 0.05,
+            "*": 0.12,
         }
     },
     client: {
@@ -73,12 +63,7 @@
             "*-foal": { base: "entity/equine/horse-foal" },
         },
         sizeByType: {
-            "equine-zebra-mountain-*-adult": 1.0,
-            "equine-zebra-mountain-*-yearling": 0.9,
-            "*-male-adult": 1.01,
-            "*-female-adult": 0.99,
-            "*-male-yearling": 0.91,
-            "*-female-yearling": 0.89,
+            "*-foal": 2.0,
             "*": 1.0
         },
         behaviors: [
@@ -96,12 +81,14 @@
             { code: "interpolateposition" },
             { code: "floatupwhenstuck", onlyWhenDead: true },
             { code: "playerbondable" },
-			{ code: "reproduce" },
-            { code: "detailedharvestable" },
+            { code: "genelib.reproduce", enabledByType: { "*-female-adult": true, "*": false } },
+            { code: "genelib.harvestable" },
             { code: "despawn", minPlayerDistance: 16, belowLightLevel: 2, "minSeconds": 900 },
-			{ code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
-			{ code: "ropetieable", minGeneration: 2 },
-			{ code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
+            { code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
+            { code: "genelib.age" },
+            { code: "genelib.hunger" },
+            { code: "ropetieable", minGeneration: 2 },
+            { code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
         ],
         animations: [
             {
@@ -245,7 +232,8 @@
                 hoursToDecay: 96,
                 decayedBlockByType: {
                     "*-adult": "carcass-large",
-                    "*": "carcass-small"
+                    "*-yearling": "carcass-large",
+                    "*": "carcass-medium"
                 }
             },
             {
@@ -254,86 +242,99 @@
             },
             { code: "playerbondable" },
             {
-                code: "detailedharvestable",
+                code: "genelib.harvestable",
                 drops: [
                     {
                         type: "item",
-                        code: "redmeat-raw",
+                        code: "game:redmeat-raw",
+                        category: "meat",
                         quantityByType: {
-                            "*-adult": {
-                                avg: 13,
-                                var: 3
-                            },
-                            "*-foal": {
-                                avg: 2,
-                                var: 1
-                            }
+                            "equine-horse-tarpan-*": { avg: 102, var: 10 },
+                            "equine-horse-takhi-*": { avg: 71, var: 7 },
+                            "equine-ass-donkey-*": { avg: 65, var: 6 },
+                            "equine-ass-kiang-*": { avg: 81, var: 8 },
+                            "equine-ass-onager-*": { avg: 58, var: 6 },
+                            "equine-zebra-plains-*": { avg: 60, var: 6 },
+                            "equine-zebra-mountain-*": { avg: 61, var: 6 },
+                            "equine-zebra-imperial-*": { avg: 94, var: 9 },
+                        }
+                    },
+                    {
+                        type: "item",
+                        code: "game:fat",
+                        category: "fat",
+                        quantityByType: {
+                            "equine-horse-tarpan-*": { avg: 25, var: 2 },
+                            "equine-horse-takhi-*": { avg: 18, var: 2 },
+                            "equine-ass-donkey-*": { avg: 16, var: 1.5 },
+                            "equine-ass-kiang-*": { avg: 20, var: 2 },
+                            "equine-ass-onager-*": { avg: 14, var: 1.5 },
+                            "equine-zebra-plains-*": { avg: 15, var: 1.5 },
+                            "equine-zebra-mountain-*": { avg: 15, var: 2 },
+                            "equine-zebra-imperial-*": { avg: 23, var: 2 },
+                        }
+                    },
+                    {
+                        type: "item",
+                        code: "hide-raw-huge",
+                        category: "pelt",
+                        quantityByType: {
+                            "*-foal": { avg: 0, var: 0 },
+                            "equine-horse-tarpan-*": { avg: 2.75, var: 0 },
+                            "equine-horse-takhi-*": { avg: 2.17, var: 0 },
+                            "equine-ass-donkey-*": { avg: 2, var: 0 },
+                            "equine-ass-kiang-*": { avg: 2.36, var: 0 },
+                            "equine-ass-onager-*": { avg: 1.88, var: 0 },
+                            "equine-zebra-plains-*": { avg: 1.93, var: 0 },
+                            "equine-zebra-mountain-*": { avg: 2, var: 0 },
+                            "equine-zebra-imperial-*": { avg: 2.6, var: 0 },
                         }
                     },
                     {
                         type: "item",
                         code: "hide-raw-large",
-                        quantity: { avg: 1.7, var: 0.0 },
-                        enabledByType: {
-                            "*-adult": true,
-                            "*": false
+                        category: "pelt",
+                        quantityByType: {
+                            "*-foal": { avg: 0, var: 0 },
+                            "*-adult": { avg: 0, var: 0 },
+                            "equine-horse-tarpan-*": { avg: 4.6, var: 0 },
+                            "equine-horse-takhi-*": { avg: 3.6, var: 0 },
+                            "equine-ass-donkey-*": { avg: 3.4, var: 0 },
+                            "equine-ass-kiang-*": { avg: 4, var: 0 },
+                            "equine-ass-onager-*": { avg: 3.1, var: 0 },
+                            "equine-zebra-plains-*": { avg: 3.2, var: 0 },
+                            "equine-zebra-mountain-*": { avg: 3.25, var: 0 },
+                            "equine-zebra-imperial-*": { avg: 4.3, var: 0 },
                         }
                     },
                     {
                         type: "item",
                         code: "hide-raw-medium",
-                        quantity: { avg: 1.5, var: 0.0 },
-                        enabledByType: {
-                            "*-yearling": true,
-                            "*": false
-                        }
-                    },
-                    {
-                        type: "item",
-                        code: "hide-raw-small",
-                        quantity: { avg: 1.3, var: 0.0 },
-                        enabledByType: {
-                            "*-foal": true,
-                            "*": false
-                        }
-                    },
-                    {
-                        type: "item",
-                        code: "fat",
+                        category: "pelt",
+                        category: "pelt",
                         quantityByType: {
-                            "*-adult": {
-                                avg: 2,
-                                var: 0.3
-                            },
-                            "*-yearling": {
-                                avg: 1,
-                                var: 0.3
-                            },
-                            "*": {
-                                avg: 0,
-                                var: 0
-                            }
+                            "*-adult": { avg: 0, var: 0 },
+                            "*-yearling": { avg: 0, var: 0 },
+                            "equine-horse-tarpan-*": { avg: 6.9, var: 0 },
+                            "equine-horse-takhi-*": { avg: 5.4, var: 0 },
+                            "equine-ass-donkey-*": { avg: 5.1, var: 0 },
+                            "equine-ass-kiang-*": { avg: 5.9, var: 0 },
+                            "equine-ass-onager-*": { avg: 4.7, var: 0 },
+                            "equine-zebra-plains-*": { avg: 4.8, var: 0 },
+                            "equine-zebra-mountain-*": { avg: 4.9, var: 0 },
+                            "equine-zebra-imperial-*": { avg: 6.5, var: 0 },
                         }
-                    }
+                    },
                 ],
             },
             { code: "breathe" },
-			{ code: "genetics", genomeType: "equine", isMaleByType: { "*-female-*": false, "*": true } },
-			{
-				code: "reproduce",
-				enabledByType: {
-					"*-female-adult": true,
-					"*": false
-				},
-				spawnEntityCodesByType: {
-				    "*-female-adult": [ { code:"equine-{type}-male-foal"}, {code: "equine-{type}-female-foal"} ]
-				},
-				requiresNearbyEntityCodeByType: {
-					"*-female-adult": "equine-{type}-male-adult"
-				},
-				spawnQuantityMin: 1,
-				spawnQuantityMax: 1,
-				gestationMonthsByType: { 
+            { code: "genelib.genetics", genomeType: "equine" },
+            {
+                code: "genelib.reproduce",
+                enabledByType: { "*-female-adult": true, "*": false },
+                offspringCodes: [ "equine-{type}-male-foal", "equine-{type}-female-foal" ],
+                sireCodes: [ "equine-{type}-male-adult" ],
+                gestationMonthsByType: { 
                     "equine-horse-*": 11,
                     "equine-ass-*": 12,
                     "equine-zebra-mountain-*": 12,
@@ -344,20 +345,53 @@
                 lactationMonths: 6.0,
                 estrousCycleMonths: 0.93,
                 daysInHeat: 2.0,
-                seasonalBreeding: "longday"
-			}, 
-			{ code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
-            { 
-                code: "age", 
-                enabledByType: {
-                    "*-foal": true,
-                    "*-yearling": true,
-                    "*-adult": false
+                breedingSeason: "longday",
+                litterAddChanceByType: {
+                    "equine-ass-*": 0.0005,
+                    "*": 0.0002,
                 },
-                monthsToGrow: 12.0,
+                litterAddAttempts: 2,
+            }, 
+            { code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
+            { 
+                code: "genelib.age", 
+                monthsToGrowByType: {
+                    "*-adult": 36.0,
+                    "*": 12.0,
+                },
+                startAgeMonthsByType: {
+                    "*-adult": 24.0,
+                    "*-yearling": 12.0,
+                },
+                initialWeightByType: {
+                    "*-foal": 0.1,
+                    "*-yearling": 0.7,
+                    "*": 0.95,
+                },
                 adultEntityCodeByType: {
                     "*-foal": "equine-{type}-{gender}-yearling",
                     "*-yearling": "equine-{type}-{gender}-adult"
+                },
+            },
+            {
+                code: "genelib.hunger",
+                monthsUntilWeaned: 8,
+                fiber: 0.7,
+                sugar: 0.07,
+                fat: 0.02,
+                fatMax: 0.2,
+                starch: 0.07,
+                starchMax: 0.3,
+                protein: 0.12,
+                water: 1.0,
+                minerals: 0.02,
+                mineralsMax: 0.1,
+                avoidFoodTags: [ "sour" ],
+                specialties: [ "toughplant" ],
+                fiberDigestion: 1.0,
+                grazeMethodsByType: {
+                    "*-foal": ["nibblegraze"],
+                    "*": ["graze"],
                 },
             },
             {
@@ -585,18 +619,6 @@
                         animationSpeed: 1.0
                     },
                     {
-                        code: "idle",
-                        animation: "Eat",
-                        priority: 1.2,
-                        priorityForCancel: 1.35,
-                        stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
-                        minduration: 2667,
-                        maxduration: 2667,
-                        mincooldown: 6000,
-                        maxcooldown: 20000,
-                        animationSpeed: 1
-                    },
-                    {
                         code: "wander",
                         animation: "Walk",
                         priority: 1.0,
@@ -614,12 +636,12 @@
                         "preferredLightLevel": 12
                     },
                     {
-                        code: "forage",
+                        code: "genelib.forage",
                         movespeedByType: {
                             "equine-*-adult": 0.006,
                             "*-foal": 0.004
                         },
-                        priority: 1.25,
+                        priority: 1.39,
                         eatSoundByType: {
                             "*": "game:creature/animal-eat-small"
                         },
@@ -631,8 +653,9 @@
                         },
                         animation: "Walk",
                         eatAnimation: "Eat",
-                        mincooldownHours: 1,
-                        maxcooldownHours: 4
+                        mincooldownHours: 0,
+                        maxcooldownHours: 0.05,
+                        nurseFromEntities: ["game:equine-{type}-female-adult"]
                     },
                     {
                         code: "lookaround",
@@ -640,7 +663,7 @@
                     }
                 ]
             },
-			{ code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
+            { code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
             {
                 code: "useinventory",
                 animation: "eat",
@@ -754,8 +777,8 @@
             },
             "equine-zebra-*-adult": {
                 climate: {
-                    minTempByType: 10,
-                    maxTempByType: 30,
+                    minTemp: 10,
+                    maxTemp: 30,
                     minRainByType: {
                         "*-imperial-*": 0.05,
                         "*": 0.25
