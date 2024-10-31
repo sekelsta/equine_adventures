@@ -2,7 +2,7 @@
     {
         file: "game:entities/land/bear.json",
         op: "add",
-        path: "/server/behaviors/9/aitasks/0/entityCodesByType/*/-",
+        path: "/server/behaviors/9/aitasks/0/entityCodes/-",
         value: "equine-*",
         side: "server"
     },

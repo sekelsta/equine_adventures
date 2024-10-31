@@ -53,11 +53,13 @@
     client: {
         renderer: "Shape",
         shapeByType: {
+            "equine-zebra-imperial-*-adult": { base: "entity/equine/zebra-imperial-adult" },
             "*-adult": { base: "entity/equine/horse-adult" },
             "*-yearling": { base: "entity/equine/horse-adult" },
             "*": { base: "entity/equine/horse-foal" },
         },
         textureByType: {
+            "equine-zebra-imperial-*": { base: "entity/equine/zebra-imperial" },
             "*-adult": { base: "entity/equine/horse-adult" },
             "*-yearling": { base: "entity/equine/horse-adult" },
             "*-foal": { base: "entity/equine/horse-foal" },
@@ -450,6 +452,7 @@
             },
             {
                 code: "taskai",
+                aiCreatureType: "LandCreature",
                 aitasks: [
                     {
                         code: "meleeattack",

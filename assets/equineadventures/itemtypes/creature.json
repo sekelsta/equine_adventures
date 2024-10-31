@@ -11,6 +11,7 @@
         { "code": "age", "states": ["adult", "yearling", "foal"] }
     ],
     shapeByType: {
+        "creature-equine-zebra-imperial-*-adult": { base: "entity/equine/zebra-imperial-adult" },
         "*-foal": {
 		    "base": "entity/equine/horse-foal"
 	    },
@@ -29,6 +30,7 @@
         "*": 1.0
     },
     textureByType: {
+        "creature-equine-zebra-imperial-*": { base: "entity/equine/zebra-imperial" },
         "*-foal": { base: "entity/equine/horse-foal" },
         "*-yearling": { base: "entity/equine/horse-adult" },
         "*-adult": { base: "entity/equine/horse-adult" },
