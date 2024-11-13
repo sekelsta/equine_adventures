@@ -100,17 +100,17 @@
 											"children": [
 												{
 													"name": "FPastern.L",
-													"from": [ 0.1, -1.3991, 0.1 ],
-													"to": [ 1.4, 0.7009, 1.3017 ],
+													"from": [ 0.2, -1.5, 0.1 ],
+													"to": [ 1.5, 0.6, 1.3017 ],
 													"unwrapMode": 3,
 													"uv": [ 41.5, 53.5 ],
-													"rotationOrigin": [ 0.3, 0.4, 0.7 ],
+													"rotationOrigin": [ 0.8, 0.4, 0.7 ],
 													"rotationZ": -35.0,
 													"faces": {
 														"north": { "texture": "#skin", "uv": [ 46.5, 53.5, 48.5, 56.5 ], "autoUv": false },
 														"east": { "texture": "#skin", "uv": [ 44.5, 53.5, 46.5, 56.5 ], "autoUv": false, "windMode": [-1,-1,-1,-1] },
 														"south": { "texture": "#skin", "uv": [ 42.5, 53.5, 44.5, 56.5 ], "autoUv": false, "windMode": [-1,-1,-1,-1] },
-														"west": { "texture": "#skin", "uv": [ 40.5, 53.5, 42.5, 56.5 ], "autoUv": false, "windMode": [-1,-1,-1,-1] }
+														"west": { "texture": "#skin", "uv": [ 41.5, 53.5, 42.5, 56.5 ], "autoUv": false, "windMode": [-1,-1,-1,-1] }
 													},
 													"children": [
 														{
@@ -478,15 +478,15 @@
 											"children": [
 												{
 													"name": "FPastern.R",
-													"from": [ 0.1, -1.3991, 0.1 ],
-													"to": [ 1.4, 0.7009, 1.3017 ],
+													"from": [ 0.2, -1.5, 0.1 ],
+													"to": [ 1.5, 0.6, 1.3017 ],
 													"unwrapMode": 1,
 													"uv": [ 51.5, 93.5 ],
-													"rotationOrigin": [ 0.3, 0.4, 0.7 ],
+													"rotationOrigin": [ 0.8, 0.4, 0.7 ],
 													"rotationZ": -35.0,
 													"faces": {
 														"north": { "texture": "#skin", "uv": [ 52.5, 93.5, 54.5, 96.5 ], "autoUv": false },
-														"east": { "texture": "#skin", "uv": [ 50.5, 93.5, 52.5, 96.5 ], "autoUv": false },
+														"east": { "texture": "#skin", "uv": [ 51.5, 93.5, 52.5, 96.5 ], "autoUv": false },
 														"south": { "texture": "#skin", "uv": [ 56.5, 93.5, 58.5, 96.5 ], "autoUv": false },
 														"west": { "texture": "#skin", "uv": [ 54.5, 93.5, 56.5, 96.5 ], "autoUv": false }
 													},
@@ -646,11 +646,11 @@
 							"children": [
 								{
 									"name": "Gaskin.L",
-									"from": [ 1.2, -8.8, 0.0 ],
-									"to": [ 3.8, 0.2, 1.8 ],
+									"from": [ 1.2, -7.0, 0.0 ],
+									"to": [ 3.8, 2.0, 1.8 ],
 									"unwrapMode": 3,
 									"uv": [ 2.0, 82.0 ],
-									"rotationOrigin": [ 1.2, 0.2, 1.8 ],
+									"rotationOrigin": [ 2.6, 1.2, 1.4 ],
 									"rotationX": 2.0,
 									"rotationZ": 60.0,
 									"faces": {
@@ -681,17 +681,17 @@
 											"children": [
 												{
 													"name": "HPastern.L",
-													"from": [ 0.1, -1.4, 0.1 ],
-													"to": [ 1.4, 0.7, 1.3017 ],
+													"from": [ 0.2, -1.5, 0.1 ],
+													"to": [ 1.5, 0.6, 1.3017 ],
 													"unwrapMode": 3,
 													"uv": [ 3.0, 104.5 ],
-													"rotationOrigin": [ 0.3, 0.4, 0.7 ],
+													"rotationOrigin": [ 0.8, 0.4, 0.7 ],
 													"rotationZ": -32.0,
 													"faces": {
 														"north": { "texture": "#skin", "uv": [ 8.0, 104.5, 10.0, 107.5 ], "autoUv": false },
 														"east": { "texture": "#skin", "uv": [ 6.0, 104.5, 8.0, 107.5 ], "autoUv": false },
 														"south": { "texture": "#skin", "uv": [ 4.0, 104.5, 6.0, 107.5 ], "autoUv": false },
-														"west": { "texture": "#skin", "uv": [ 2.0, 104.5, 4.0, 107.5 ], "autoUv": false }
+														"west": { "texture": "#skin", "uv": [ 3.0, 104.5, 4.0, 107.5 ], "autoUv": false }
 													},
 													"children": [
 														{
@@ -741,11 +741,11 @@
 							"children": [
 								{
 									"name": "Gaskin.R",
-									"from": [ 1.2, -8.8, 0.2 ],
-									"to": [ 3.8, 0.2, 2.0 ],
+									"from": [ 1.2, -7.0, 0.2 ],
+									"to": [ 3.8, 2.0, 2.0 ],
 									"unwrapMode": 1,
 									"uv": [ 23.0, 82.0 ],
-									"rotationOrigin": [ 1.2, 0.2, 0.2 ],
+									"rotationOrigin": [ 2.6, 1.2, 0.6 ],
 									"rotationX": -2.0,
 									"rotationZ": 60.0,
 									"faces": {
@@ -776,15 +776,15 @@
 											"children": [
 												{
 													"name": "HPastern.R",
-													"from": [ 0.1, -1.4, 0.1 ],
-													"to": [ 1.4, 0.7, 1.3017 ],
+													"from": [ 0.2, -1.5, 0.1 ],
+													"to": [ 1.5, 0.6, 1.3017 ],
 													"unwrapMode": 1,
 													"uv": [ 23.5, 104.5 ],
-													"rotationOrigin": [ 0.3, 0.4, 0.7 ],
+													"rotationOrigin": [ 0.8, 0.4, 0.7 ],
 													"rotationZ": -32.0,
 													"faces": {
 														"north": { "texture": "#skin", "uv": [ 24.5, 104.5, 26.5, 107.5 ], "autoUv": false },
-														"east": { "texture": "#skin", "uv": [ 22.5, 104.5, 24.5, 107.5 ], "autoUv": false },
+														"east": { "texture": "#skin", "uv": [ 23.5, 104.5, 24.5, 107.5 ], "autoUv": false },
 														"south": { "texture": "#skin", "uv": [ 28.5, 104.5, 30.5, 107.5 ], "autoUv": false },
 														"west": { "texture": "#skin", "uv": [ 26.5, 104.5, 28.5, 107.5 ], "autoUv": false }
 													},
