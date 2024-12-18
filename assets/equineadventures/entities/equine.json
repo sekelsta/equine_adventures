@@ -91,6 +91,7 @@
             { code: "genelib.hunger" },
             { code: "ropetieable", minGeneration: 2 },
             { code: "mouthinventory", acceptStacks: [ { type: "item", code: "vegetable-carrot" }, { type: "item", code: "fruit-redapple" }, { type: "item", code: "fruit-pinkapple" }, { type: "item", code: "fruit-yellowapple" }, { type: "item", code: "vegetable-turnip" }, { type: "item", code: "vegetable-parsnip" } ] },
+            { code: "genelib.info", showtagonlywhentargeted: true },
         ],
         animations: [
             {
@@ -371,8 +372,8 @@
                     "*": 0.95,
                 },
                 adultEntityCodeByType: {
-                    "*-foal": "equine-{type}-{gender}-yearling",
-                    "*-yearling": "equine-{type}-{gender}-adult"
+                    "*-foal": "equineadventures:equine-{type}-{gender}-yearling",
+                    "*-yearling": "equineadventures:equine-{type}-{gender}-adult"
                 },
             },
             {
@@ -683,6 +684,7 @@
                 code: "pettable",
                 minGeneration: 1
             },
+            { code: "genelib.info", showtagonlywhentargeted: true },
         ],
         spawnconditions: {
             worldgen: {
