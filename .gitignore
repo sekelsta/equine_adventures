@@ -4,3 +4,4 @@ src/obj/
 Build/CakeBuild/bin/
 Build/CakeBuild/obj/
 Build/Releases/
+*.blend1
