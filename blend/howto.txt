@@ -1,0 +1,9 @@
+Art status:
+
+zebra-imperial-adult:
+animations exported from blender, untouched. Before export, cyclic animations (walk, trot, and gallop) were edited to fit fully within the frame period (exportreadyanims file)
+
+zebra-imperial-foal:
+- sit, sleep, and dead animations adjusted to properly be positioned on the ground
+- trot animation has hooves colliding, but was not adjusted to fix it
+
