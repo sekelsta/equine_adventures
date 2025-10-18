@@ -715,6 +715,20 @@
 													]
 												}
 											]
+										},
+										{
+											"name": "Ham.L",
+											"from": [ 0.0, 2.8, 0.1 ],
+											"to": [ 2.5, 7.8, 1.7 ],
+											"unwrapMode": 3,
+											"uv": [ 32.0, 83.0 ],
+											"rotationOrigin": [ 2.5, 2.8, 0.9 ],
+											"rotationZ": -40.0,
+											"faces": {
+												"north": { "texture": "#skin", "uv": [ 36.0, 83.0, 38.5, 88.0 ] },
+												"east": { "texture": "#skin", "uv": [ 34.5, 83.0, 36.0, 88.0 ] },
+												"south": { "texture": "#skin", "uv": [ 32.0, 83.0, 34.5, 88.0 ] }
+											}
 										}
 									]
 								}
@@ -810,6 +824,20 @@
 													]
 												}
 											]
+										},
+										{
+											"name": "Ham.R",
+											"from": [ 0.0, 2.8, 0.1 ],
+											"to": [ 2.5, 7.8, 1.7 ],
+											"unwrapMode": 3,
+											"uv": [ 39.0, 83.0 ],
+											"rotationOrigin": [ 2.5, 2.8, 0.9 ],
+											"rotationZ": -40.0,
+											"faces": {
+												"north": { "texture": "#skin", "uv": [ 43.0, 83.0, 45.5, 88.0 ] },
+												"east": { "texture": "#skin", "uv": [ 41.5, 83.0, 43.0, 88.0 ] },
+												"south": { "texture": "#skin", "uv": [ 39.0, 83.0, 41.5, 88.0 ] }
+											}
 										}
 									]
 								}
