@@ -3,8 +3,8 @@
     class: "EntityAgent",
     variantgroups: [
         { code: "type", states: ["horse-tarpan", "horse-takhi", "ass-donkey", "ass-kiang", "ass-onager", "zebra-plains", "zebra-mountain", "zebra-imperial"] },
-        { code: "gender", states: ["male", "female"] },
-        { code: "age", states: ["adult", "yearling", "foal"] }
+        { code: "age", states: ["adult", "yearling", "foal"] },
+        { code: "gender", states: ["male", "female"] }
     ],
     hitBoxSizeByType: {
         "equine-*-adult": { x: 1.67, y: 1.5 },
@@ -83,10 +83,10 @@
             { code: "interpolateposition" },
             { code: "floatupwhenstuck", onlyWhenDead: true },
             { code: "playerbondable" },
-            { code: "genelib.reproduce", enabledByType: { "*-female-adult": true, "*": false } },
+            { code: "genelib.reproduce", enabledByType: { "*-adult-female": true, "*": false } },
             { code: "genelib.harvestable" },
             { code: "despawn", minPlayerDistance: 16, belowLightLevel: 2, "minSeconds": 900 },
-            { code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
+            { code: "milkable", enabledByType: { "*-adult-female": true, "*": false } },
             { code: "genelib.age" },
             { code: "genelib.hunger" },
             { code: "ropetieable", minGeneration: 2 },
@@ -334,9 +334,9 @@
             { code: "genelib.genetics", genomeType: "equine" },
             {
                 code: "genelib.reproduce",
-                enabledByType: { "*-female-adult": true, "*": false },
-                offspringCodes: [ "equine-{type}-male-foal", "equine-{type}-female-foal" ],
-                sireCodes: [ "equine-{type}-male-adult" ],
+                enabledByType: { "*-adult-female": true, "*": false },
+                offspringCodes: [ "equine-{type}-foal-male", "equine-{type}-foal-female" ],
+                sireCodes: [ "equine-{type}-adult-male" ],
                 gestationMonthsByType: { 
                     "equine-horse-*": 11,
                     "equine-ass-*": 12,
@@ -355,7 +355,7 @@
                 },
                 litterAddAttempts: 2,
             }, 
-            { code: "milkable", enabledByType: { "*-female-adult": true, "*": false } },
+            { code: "milkable", enabledByType: { "*-adult-female": true, "*": false } },
             { 
                 code: "genelib.age", 
                 monthsToGrowByType: {
@@ -405,7 +405,7 @@
                         whenHealthRelBelow: 0.4,
                         duration: 60,
                         chanceByType: {
-                            "*-male-adult": 0.95,
+                            "*-adult-male": 0.95,
                             "*": 1.0
                         },
                         slot: 0,
@@ -416,7 +416,7 @@
                         code: "fleeondamage",
                         duration: 40,
                         chanceByType: {
-                            "*-male-adult": 0.85,
+                            "*-adult-male": 0.85,
                             "*": 1.0
                         },
                         slot: 0,
@@ -434,7 +434,7 @@
                         code: "aggressiveondamage",
                         duration: 30,
                         chanceByType: {
-                            "*-male-adult": 0.5,
+                            "*-adult-male": 0.5,
                             "*": 0.0
                         },
                         slot: 0,
@@ -465,14 +465,14 @@
                         entityCodes: [ "player", "wolf-*", "bear-*", "hyena-*", "fox-*", "caninae-*", "machairodontinae-*", "pantherinae-*", "varanus-*", "blackrat", "chainviper", "coachwhip", "pitviper" ],
                         priority: 3,
                         damageByType: {
-                            "equine-zebra-*-male-adult": 8,
-                            "equine-zebra-*-female-adult": 6,
-                            "equine-zebra-*-male-yearling": 5,
-                            "equine-zebra-*-female-yearling": 4,
-                            "equine-*-male-adult": 6,
-                            "equine-*-female-adult": 4,
-                            "equine-*-male-yearling": 4,
-                            "equine-*-female-yearling": 3
+                            "equine-zebra-*-adult-male": 8,
+                            "equine-zebra-*-adult-female": 6,
+                            "equine-zebra-*-yearling-male": 5,
+                            "equine-zebra-*-yearling-female": 4,
+                            "equine-*-adult-male": 6,
+                            "equine-*-adult-female": 4,
+                            "equine-*-yearling-male": 4,
+                            "equine-*-yearling-female": 3
                         },
                         damageTier: 2,
                         damageType: "SlashingAttack",
@@ -520,7 +520,7 @@
                         code: "seekentity",
                         animation: "Bite",
                         enabledByType: {
-                            "*-male-adult": true,
+                            "*-adult-male": true,
                             "*": false
                         },
                         entityCodes: [ "player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "caninae-cerdocyonina-male-chrysocyon-brachyurus", "caninae-cerdocyonina-female-chrysocyon-brachyurus", "caninae-cerdocyonina-male-dusicyon-australis", "caninae-cerdocyonina-female-dusicyon-australis", "caninae-cerdocyonina-male-dusicyon-avus", "caninae-cerdocyonina-female-dusicyon-avus", "caninae-cerdocyonina-male-speothos-pacivorus", "caninae-cerdocyonina-female-speothos-pacivorus" ],
@@ -541,7 +541,7 @@
                         },
                         priority: 1.4,
                         entityCodeByType: {
-                            "*": "equine-{type}-female-adult"
+                            "*": "equine-{type}-adult-female"
                         },
                         movespeed: 0.02,
                         animationSpeed: 3,
@@ -659,7 +659,7 @@
                         eatAnimation: "Eat",
                         mincooldownHours: 0,
                         maxcooldownHours: 0.05,
-                        nurseFromEntities: ["game:equine-{type}-female-adult"]
+                        nurseFromEntities: ["game:equine-{type}-adult-female"]
                     },
                     {
                         code: "lookaround",
@@ -692,7 +692,7 @@
                 tryOnlySurface: true,
                 groupSize: { avg: 2, var: 3 },
                 insideBlockCodes: ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
-                companions: ["equine-{type}-female-adult", "equine-{type}-female-foal", "equine-{type}-male-foal"]
+                companions: ["equine-{type}-adult-female", "equine-{type}-foal-female", "equine-{type}-foal-male"]
             },
             runtime: {
                 group: "neutral",
@@ -703,7 +703,7 @@
                 groupSize: { avg: 2.0, var: 3.0 },
                 maxQuantityByGroup: { code: "equine-*", "maxQuantity": 8 },
                 insideBlockCodes: [ "game:air", "game:soil-*","game:gravel-*", "game:tallgrass-*", "game:snowlayer-1", "game:sand-*"],
-                companions: ["equine-{type}-female-adult", "equine-{type}-female-yearling", "equine-{type}-male-yearling", "equine-{type}-female-foal", "equine-{type}-male-foal"]
+                companions: ["equine-{type}-adult-female", "equine-{type}-yearling-female", "equine-{type}-yearling-male", "equine-{type}-foal-female", "equine-{type}-foal-male"]
             }
         },
         spawnconditionsByType: {
