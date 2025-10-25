@@ -850,7 +850,7 @@
 	],
 	"animations": [
 		{
-			"name": "bite",
+			"name": "Bite",
 			"code": "bite",
 			"quantityframes": 16,
 			"onActivityStopped": "EaseOut",
@@ -1024,7 +1024,7 @@
 		},
 
 		{
-			"name": "die",
+			"name": "Die",
 			"code": "die",
 			"quantityframes": 13,
 			"onActivityStopped": "EaseOut",
@@ -1187,7 +1187,7 @@
 		},
 
 		{
-			"name": "gallop",
+			"name": "Gallop",
 			"code": "gallop",
 			"quantityframes": 16,
 			"onActivityStopped": "EaseOut",
@@ -1408,7 +1408,332 @@
 		},
 
 		{
-			"name": "idle",
+			"name": "Graze",
+			"code": "graze",
+			"quantityframes": 81,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Neck": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Poll": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Forehead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Chest": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Mane withers": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.8113 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Elbow.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Elbow.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Body": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Hip": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Arm.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FCannon.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FPastern.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FHoof.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FHoof.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Tailhead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 12,
+					"elements": {
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 53.0361 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Elbow.R": { "offsetX": -0.1535, "offsetY": 1.0236, "offsetZ": 0.0 },
+						"Arm.R": { "rotationX": 0.0405, "rotationY": 0.2819, "rotationZ": -16.3695 },
+						"FCannon.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 21.6724 }
+					}
+				},
+				{
+					"frame": 17,
+					"elements": {
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.7993 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 19,
+					"elements": {
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 47.5293 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Arm.R": { "rotationX": -2.2345, "rotationY": -0.8427, "rotationZ": -29.7877 },
+						"FCannon.R": { "rotationX": 0.5097, "rotationY": -0.2356, "rotationZ": 22.2779 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"FHoof.R": { "rotationX": -0.3254, "rotationY": 0.2315, "rotationZ": 2.064 }
+					}
+				},
+				{
+					"frame": 25,
+					"elements": {
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.3324 },
+						"FCannon.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 27,
+					"elements": {
+						"Neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 57.8176 },
+						"FPastern.R": { "rotationX": -0.1908, "rotationY": 0.1647, "rotationZ": 10.4875 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.4789 },
+						"FHoof.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.7218 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"Neck": { "offsetX": -2.0476, "offsetY": 2.1453, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 58.6424 }
+					}
+				},
+				{
+					"frame": 31,
+					"elements": {
+						"Elbow.R": { "offsetX": -0.1702, "offsetY": 0.3698, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.7771 },
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Arm.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 34,
+					"elements": {
+						"Poll": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.1428 },
+						"Chest": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.4933 },
+						"Mane withers": { "offsetX": -2.1497, "offsetY": -0.7891, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.8113 },
+						"Elbow.L": { "offsetX": -0.1116, "offsetY": 0.5485, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.5692 },
+						"Body": { "offsetX": -3.4917, "offsetY": -0.7236, "offsetZ": 0.0 },
+						"Hip": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.8503 },
+						"FPastern.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.7595 },
+						"FHoof.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.7468 },
+						"Tailhead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.6771 },
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.6 }
+					}
+				},
+				{
+					"frame": 37,
+					"elements": {
+						"Neck": { "rotationX": 2.3469, "rotationY": 0.1177, "rotationZ": 58.886 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.8096 },
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.2409 }
+					}
+				},
+				{
+					"frame": 40,
+					"elements": {
+						"Forehead": { "rotationX": 0.6482, "rotationY": -1.9366, "rotationZ": -23.7765 }
+					}
+				},
+				{
+					"frame": 41,
+					"elements": {
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 42,
+					"elements": {
+						"Forehead": { "rotationX": 0.6482, "rotationY": -1.9366, "rotationZ": -23.7765 }
+					}
+				},
+				{
+					"frame": 46,
+					"elements": {
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 49,
+					"elements": {
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 50,
+					"elements": {
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.2409 }
+					}
+				},
+				{
+					"frame": 52,
+					"elements": {
+						"Neck": { "rotationX": -2.1225, "rotationY": 0.2542, "rotationZ": 57.4675 },
+						"Forehead": { "rotationX": -0.5857, "rotationY": 1.5103, "rotationZ": -24.0954 }
+					}
+				},
+				{
+					"frame": 53,
+					"elements": {
+						"Elbow.R": { "offsetX": -0.1702, "offsetY": 0.3698, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.7771 },
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Arm.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 54,
+					"elements": {
+						"Neck": { "rotationX": -2.1225, "rotationY": 0.2542, "rotationZ": 57.4675 },
+						"Forehead": { "rotationX": -0.5857, "rotationY": 1.5103, "rotationZ": -24.0954 },
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.4789 },
+						"FHoof.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.7218 }
+					}
+				},
+				{
+					"frame": 55,
+					"elements": {
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 56,
+					"elements": {
+						"Poll": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.1428 },
+						"Chest": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.4933 },
+						"Mane withers": { "offsetX": -2.1497, "offsetY": -0.7891, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.8113 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.8096 },
+						"Elbow.L": { "offsetX": -0.1116, "offsetY": 0.5485, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.5692 },
+						"Cheeks": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Body": { "offsetX": -3.4917, "offsetY": -0.7236, "offsetZ": 0.0 },
+						"Hip": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.8503 },
+						"FPastern.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.7595 },
+						"FHoof.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.7468 },
+						"Tailhead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.6771 }
+					}
+				},
+				{
+					"frame": 58,
+					"elements": {
+						"Neck": { "offsetX": -2.0476, "offsetY": 2.1453, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 58.6424 },
+						"FPastern.R": { "rotationX": -0.1908, "rotationY": 0.1647, "rotationZ": 10.4875 }
+					}
+				},
+				{
+					"frame": 60,
+					"elements": {
+						"FCannon.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 63,
+					"elements": {
+						"FHoof.R": { "rotationX": -0.3254, "rotationY": 0.2315, "rotationZ": 2.064 }
+					}
+				},
+				{
+					"frame": 65,
+					"elements": {
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 53.0361 }
+					}
+				},
+				{
+					"frame": 66,
+					"elements": {
+						"Arm.R": { "rotationX": -2.2345, "rotationY": -0.8427, "rotationZ": -29.7877 },
+						"FCannon.R": { "rotationX": 0.5097, "rotationY": -0.2356, "rotationZ": 22.2779 },
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.6 }
+					}
+				},
+				{
+					"frame": 71,
+					"elements": {
+						"Elbow.R": { "offsetX": -0.0963, "offsetY": 1.0305, "offsetZ": 0.0 },
+						"Arm.R": { "rotationX": 0.0405, "rotationY": 0.2819, "rotationZ": -16.3695 },
+						"FCannon.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 21.6724 }
+					}
+				},
+				{
+					"frame": 80,
+					"elements": {
+						"Neck": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Poll": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Forehead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Chest": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Mane withers": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.8113 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Elbow.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Elbow.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Body": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0 },
+						"Hip": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Arm.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FCannon.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FPastern.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FPastern.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FHoof.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"FHoof.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Tailhead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Tailtuft": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Hurt",
+			"code": "hurt",
+			"quantityframes": 16,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Poll": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Forehead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Ear.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Ear.L": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 3,
+					"elements": {
+						"Neck": { "rotationX": -0.5962, "rotationY": -2.6676, "rotationZ": -4.0366 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.9408 },
+						"Poll": { "rotationX": 5.5906, "rotationY": 9.6678, "rotationZ": 9.3038 },
+						"Forehead": { "rotationX": -0.153, "rotationY": 1.3956, "rotationZ": 13.1386 },
+						"Ear.R": { "rotationX": -50.0194, "rotationY": -3.7878, "rotationZ": 13.7307 },
+						"Ear.L": { "rotationX": 124.5593, "rotationY": 15.3136, "rotationZ": -41.2679 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Poll": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Forehead": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Ear.R": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Ear.L": { "rotationX": 180.0, "rotationY": 180.0, "rotationZ": -180.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Idle",
 			"code": "idle",
 			"quantityframes": 32,
 			"onActivityStopped": "EaseOut",
@@ -1448,7 +1773,7 @@
 		},
 
 		{
-			"name": "sit",
+			"name": "Sit",
 			"code": "sit",
 			"quantityframes": 81,
 			"onActivityStopped": "EaseOut",
@@ -1530,7 +1855,7 @@
 		},
 
 		{
-			"name": "sleep",
+			"name": "Sleep",
 			"code": "sleep",
 			"quantityframes": 81,
 			"onActivityStopped": "EaseOut",
@@ -1599,7 +1924,278 @@
 		},
 
 		{
-			"name": "trot",
+			"name": "Swim",
+			"code": "swim",
+			"quantityframes": 40,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Body": { "offsetX": 0.2996, "offsetY": -0.6158, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.5304 },
+						"Hip": { "rotationX": -2.772, "rotationY": -1.8992, "rotationZ": 4.3324 },
+						"Chest": { "rotationX": 0.5169, "rotationY": 1.6723, "rotationZ": 2.592 },
+						"Forehead": { "rotationX": 0.4194, "rotationY": -1.0108, "rotationZ": -17.3226 },
+						"Neck": { "rotationX": 0.0182, "rotationY": -0.8194, "rotationZ": -14.8206 },
+						"Tailhead": { "rotationX": 0.2031, "rotationY": -0.5924, "rotationZ": 44.6671 },
+						"Tail": { "rotationX": 6.3434, "rotationY": 2.3424, "rotationZ": 11.9163 },
+						"Tailtip": { "offsetX": -0.025, "offsetY": 0.0776, "offsetZ": -0.0174, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Poll": { "rotationX": 0.3945, "rotationY": -0.8788, "rotationZ": -9.7675 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.2477 },
+						"Gaskin.R": { "rotationX": -0.4497, "rotationY": 2.4224, "rotationZ": 9.3192 },
+						"HCannon.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -4.4525, "rotationY": -5.28, "rotationZ": -18.6601 },
+						"HPastern.R": { "rotationX": 3.4448, "rotationY": 0.9695, "rotationZ": 66.0531 },
+						"HHoof.R": { "rotationX": 0.641, "rotationY": 0.2419, "rotationZ": 11.9799 },
+						"Ear.R": { "rotationX": -22.2896, "rotationY": -81.2885, "rotationZ": -15.8997 },
+						"Ear.L": { "rotationX": 22.2896, "rotationY": 81.2885, "rotationZ": -15.8997 },
+						"Thigh.L": { "rotationX": 3.0183, "rotationY": -1.989, "rotationZ": -1.5223 },
+						"Gaskin.L": { "rotationX": -2.3028, "rotationY": -2.3539, "rotationZ": 12.2498 },
+						"HCannon.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.7523, "rotationY": -6.5734, "rotationZ": -85.6739 },
+						"HPastern.L": { "rotationX": -3.6739, "rotationY": -0.3898, "rotationZ": 53.5651 },
+						"HHoof.L": { "rotationX": 0.0121, "rotationY": 0.0032, "rotationZ": -0.219 },
+						"Tailtuft": { "rotationX": 8.5208, "rotationY": 2.6759, "rotationZ": 13.1199 },
+						"Elbow.L": { "rotationX": 0.0171, "rotationY": 0.1858, "rotationZ": 2.0077 },
+						"Arm.L": { "rotationX": -0.2742, "rotationY": -0.6858, "rotationZ": -53.8047 },
+						"FCannon.L": { "rotationX": -0.5149, "rotationY": -0.5618, "rotationZ": 23.4776 },
+						"FPastern.L": { "rotationX": 0.5905, "rotationY": -0.2813, "rotationZ": 38.3241 },
+						"FHoof.L": { "rotationX": 0.048, "rotationY": -0.0669, "rotationZ": -3.2234 },
+						"Elbow.R": { "rotationX": -0.0277, "rotationY": -0.2021, "rotationZ": -1.3548 },
+						"Arm.R": { "rotationX": 0.2592, "rotationY": 0.8109, "rotationZ": -64.5131 },
+						"FCannon.R": { "rotationX": -0.1781, "rotationY": 0.4516, "rotationZ": 116.4037 },
+						"FPastern.R": { "rotationX": -0.1523, "rotationY": 0.4155, "rotationZ": 85.974 },
+						"FHoof.R": { "rotationX": -0.0538, "rotationY": 0.0503, "rotationZ": 10.6002 }
+					}
+				},
+				{
+					"frame": 2,
+					"elements": {
+						"FPastern.L": { "rotationX": 0.6274, "rotationY": -0.287, "rotationZ": 34.5535 },
+						"FCannon.R": { "rotationX": -0.2241, "rotationY": 0.2863, "rotationZ": 117.9792 }
+					}
+				},
+				{
+					"frame": 4,
+					"elements": {
+						"HPastern.R": { "rotationX": 7.4115, "rotationY": 3.234, "rotationZ": 95.3227 },
+						"Tailtuft": { "rotationX": 10.7501, "rotationY": 3.3672, "rotationZ": 13.0024 },
+						"FCannon.L": { "rotationX": -0.2052, "rotationY": 0.0201, "rotationZ": 10.5575 }
+					}
+				},
+				{
+					"frame": 5,
+					"elements": {
+						"Thigh.L": { "rotationX": 2.3156, "rotationY": -1.5909, "rotationZ": -3.5899 },
+						"Elbow.L": { "rotationX": -0.0205, "rotationY": 0.0963, "rotationZ": 18.804 },
+						"FHoof.L": { "rotationX": 0.0445, "rotationY": -0.0732, "rotationZ": -8.9007 }
+					}
+				},
+				{
+					"frame": 7,
+					"elements": {
+						"Gaskin.L": { "rotationX": -3.9269, "rotationY": -2.6373, "rotationZ": 0.9802 },
+						"HCannon.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.9841, "rotationY": -1.6119, "rotationZ": -78.5627 },
+						"FPastern.R": { "rotationX": -0.0837, "rotationY": 0.4862, "rotationZ": 95.938 },
+						"FHoof.R": { "rotationX": -0.0538, "rotationY": 0.0503, "rotationZ": 10.6002 }
+					}
+				},
+				{
+					"frame": 8,
+					"elements": {
+						"HHoof.L": { "rotationX": 0.1566, "rotationY": 0.037, "rotationZ": -2.8095 },
+						"Arm.L": { "rotationX": -0.0209, "rotationY": -0.3793, "rotationZ": -22.6061 }
+					}
+				},
+				{
+					"frame": 9,
+					"elements": {
+						"Tailtip": { "rotationX": 12.5823, "rotationY": 3.8034, "rotationZ": 7.129 },
+						"Arm.R": { "rotationX": 0.4796, "rotationY": 0.9358, "rotationZ": -85.7014 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"FCannon.R": { "rotationX": 0.0785, "rotationY": 2.5197, "rotationZ": 85.3543 }
+					}
+				},
+				{
+					"frame": 13,
+					"elements": {
+						"Elbow.R": { "rotationX": -0.0789, "rotationY": -0.2605, "rotationZ": -14.7887 },
+						"Arm.R": { "rotationX": 0.5373, "rotationY": 0.8123, "rotationZ": -78.7218 }
+					}
+				},
+				{
+					"frame": 14,
+					"elements": {
+						"Gaskin.R": { "rotationX": 0.4412, "rotationY": 1.5862, "rotationZ": 26.0088 },
+						"HCannon.R": { "rotationX": -2.0024, "rotationY": 4.9541, "rotationZ": -100.3538 },
+						"HCannon.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -0.1622, "rotationY": 0.2154, "rotationZ": 4.7015 }
+					}
+				},
+				{
+					"frame": 15,
+					"elements": {
+						"Body": { "offsetX": 0.3173, "offsetY": -0.5223, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.2179 },
+						"Chest": { "rotationX": -0.2946, "rotationY": -1.1668, "rotationZ": 5.5966 },
+						"Forehead": { "rotationX": -0.4255, "rotationY": 0.798, "rotationZ": -18.3054 }
+					}
+				},
+				{
+					"frame": 16,
+					"elements": {
+						"Poll": { "rotationX": -0.4601, "rotationY": 1.1885, "rotationZ": -9.3252 },
+						"FCannon.L": { "rotationX": -0.3167, "rotationY": -1.3038, "rotationZ": 92.8149 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"Tail": { "rotationX": -6.7191, "rotationY": -2.4804, "rotationZ": 11.9005 },
+						"HPastern.R": { "rotationX": 3.6739, "rotationY": 0.3898, "rotationZ": 53.5651 },
+						"Gaskin.L": { "rotationX": 0.4497, "rotationY": -2.4224, "rotationZ": 9.3192 },
+						"HCannon.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 4.4525, "rotationY": 5.28, "rotationZ": -18.6601 },
+						"HPastern.L": { "rotationX": -3.4448, "rotationY": -0.9695, "rotationZ": 66.0531 },
+						"HHoof.L": { "rotationX": -0.641, "rotationY": -0.2419, "rotationZ": 11.9799 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"Hip": { "rotationX": 2.772, "rotationY": 1.8992, "rotationZ": 4.3324 },
+						"Chest": { "rotationX": -0.4582, "rotationY": -1.6893, "rotationZ": 4.5928 },
+						"Forehead": { "rotationX": -0.4194, "rotationY": 1.0108, "rotationZ": -17.3226 },
+						"Neck": { "rotationX": -0.0182, "rotationY": 0.8194, "rotationZ": -14.8206 },
+						"Tailhead": { "rotationX": -0.2031, "rotationY": 0.5924, "rotationZ": 44.6671 },
+						"Tailtip": { "rotationX": 1.12, "rotationY": 1.1458, "rotationZ": 12.1447 },
+						"Thigh.L": { "rotationX": -2.0003, "rotationY": -1.2139, "rotationZ": 11.4061 },
+						"FPastern.R": { "rotationX": -0.6274, "rotationY": 0.287, "rotationZ": 34.5536 }
+					}
+				},
+				{
+					"frame": 22,
+					"elements": {
+						"HCannon.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 1.7523, "rotationY": 6.5734, "rotationZ": -85.6739 },
+						"HPastern.L": { "rotationX": -7.4115, "rotationY": -3.234, "rotationZ": 95.3227 },
+						"FCannon.R": { "rotationX": 0.2052, "rotationY": -0.0201, "rotationZ": 10.5575 }
+					}
+				},
+				{
+					"frame": 23,
+					"elements": {
+						"Elbow.R": { "rotationX": 0.0205, "rotationY": -0.0963, "rotationZ": 18.804 }
+					}
+				},
+				{
+					"frame": 24,
+					"elements": {
+						"Tailtuft": { "rotationX": -10.7501, "rotationY": -3.3672, "rotationZ": 13.0024 },
+						"FCannon.L": { "rotationX": 0.2241, "rotationY": -0.2863, "rotationZ": 117.9792 }
+					}
+				},
+				{
+					"frame": 26,
+					"elements": {
+						"Arm.R": { "rotationX": 0.0209, "rotationY": 0.3793, "rotationZ": -22.6061 }
+					}
+				},
+				{
+					"frame": 29,
+					"elements": {
+						"Tailtip": { "rotationX": -12.5823, "rotationY": -3.8034, "rotationZ": 7.129 },
+						"Gaskin.R": { "rotationX": 3.9269, "rotationY": 2.6373, "rotationZ": 0.9802 },
+						"HCannon.R": { "rotationX": -0.9841, "rotationY": 1.6119, "rotationZ": -78.5627 },
+						"HHoof.R": { "rotationX": -0.1566, "rotationY": -0.037, "rotationZ": -2.8095 },
+						"FPastern.L": { "rotationX": 0.0837, "rotationY": -0.4862, "rotationZ": 95.938 },
+						"FHoof.L": { "rotationX": 0.0538, "rotationY": -0.0503, "rotationZ": 10.6002 }
+					}
+				},
+				{
+					"frame": 31,
+					"elements": {
+						"Arm.L": { "rotationX": -0.4796, "rotationY": -0.9358, "rotationZ": -85.7014 }
+					}
+				},
+				{
+					"frame": 32,
+					"elements": {
+						"Gaskin.L": { "rotationX": -0.4412, "rotationY": -1.5862, "rotationZ": 26.0088 },
+						"HCannon.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 2.0024, "rotationY": -4.9541, "rotationZ": -100.3537 },
+						"FCannon.L": { "rotationX": -0.0785, "rotationY": -2.5197, "rotationZ": 85.3543 }
+					}
+				},
+				{
+					"frame": 34,
+					"elements": {
+						"FCannon.R": { "rotationX": 0.3167, "rotationY": 1.3038, "rotationZ": 92.8149 }
+					}
+				},
+				{
+					"frame": 35,
+					"elements": {
+						"Body": { "offsetX": 0.2958, "offsetY": -0.633, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.2179 },
+						"Chest": { "rotationX": 0.781, "rotationY": 0.9705, "rotationZ": 1.6471 },
+						"Forehead": { "rotationX": 0.5521, "rotationY": -0.7782, "rotationZ": -15.9028 },
+						"Elbow.L": { "rotationX": 0.0789, "rotationY": 0.2605, "rotationZ": -14.7887 },
+						"Arm.L": { "rotationX": -0.5373, "rotationY": -0.8123, "rotationZ": -78.7218 }
+					}
+				},
+				{
+					"frame": 36,
+					"elements": {
+						"Poll": { "rotationX": 0.4926, "rotationY": -1.1191, "rotationZ": -9.8168 },
+						"HCannon.R": { "rotationX": 0.1622, "rotationY": -0.2154, "rotationZ": 4.7015 }
+					}
+				},
+				{
+					"frame": 38,
+					"elements": {
+						"Tail": { "rotationX": 6.7191, "rotationY": 2.4804, "rotationZ": 11.9005 }
+					}
+				},
+				{
+					"frame": 39,
+					"elements": {
+						"Body": { "offsetX": 0.2984, "offsetY": -0.6215, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.4259 },
+						"Hip": { "rotationX": -2.7318, "rotationY": -1.8717, "rotationZ": 4.3337 },
+						"Chest": { "rotationX": 0.5484, "rotationY": 1.6344, "rotationZ": 2.4934 },
+						"Forehead": { "rotationX": 0.4312, "rotationY": -1.0001, "rotationZ": -17.1749 },
+						"Neck": { "rotationX": 0.0179, "rotationY": -0.8075, "rotationZ": -14.8206 },
+						"Tailhead": { "rotationX": 0.2002, "rotationY": -0.5838, "rotationZ": 44.667 },
+						"Tail": { "rotationX": 6.6218, "rotationY": 2.4447, "rotationZ": 11.9047 },
+						"Tailtip": { "offsetX": -0.025, "offsetY": 0.0781, "offsetZ": -0.0146, "rotationX": -1.8844, "rotationY": -0.5696, "rotationZ": 0.0919 },
+						"Poll": { "rotationX": 0.4353, "rotationY": -0.9787, "rotationZ": -9.7881 },
+						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.2477 },
+						"Gaskin.R": { "rotationX": -0.3484, "rotationY": 2.4346, "rotationZ": 9.1255 },
+						"HCannon.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.5782, "rotationY": -4.6483, "rotationZ": -14.9963 },
+						"HPastern.R": { "rotationX": 3.4456, "rotationY": 0.9661, "rotationZ": 65.9782 },
+						"HHoof.R": { "rotationX": 0.6234, "rotationY": 0.2332, "rotationZ": 11.6364 },
+						"Ear.R": { "rotationX": -22.2896, "rotationY": -81.2885, "rotationZ": -15.8997 },
+						"Ear.L": { "rotationX": 22.2896, "rotationY": 81.2885, "rotationZ": -15.8997 },
+						"Thigh.L": { "rotationX": 2.9828, "rotationY": -1.9794, "rotationZ": -1.4291 },
+						"Gaskin.L": { "rotationX": -2.287, "rotationY": -2.1074, "rotationZ": 14.7556 },
+						"HCannon.L": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.6755, "rotationY": -6.5373, "rotationZ": -86.3095 },
+						"HPastern.L": { "rotationX": -3.714, "rotationY": -0.4017, "rotationZ": 53.9298 },
+						"HHoof.L": { "rotationX": -0.0211, "rotationY": -0.0056, "rotationZ": 0.3813 },
+						"Tailtuft": { "rotationX": 7.399, "rotationY": 2.3261, "rotationZ": 13.1688 },
+						"Elbow.L": { "rotationX": 0.0332, "rotationY": 0.2099, "rotationZ": -2.9967 },
+						"Arm.L": { "rotationX": -0.3345, "rotationY": -0.7253, "rotationZ": -59.5989 },
+						"FCannon.L": { "rotationX": -0.6091, "rotationY": -0.8539, "rotationZ": 29.9222 },
+						"FPastern.L": { "rotationX": 0.5481, "rotationY": -0.2779, "rotationZ": 42.6221 },
+						"FHoof.L": { "rotationX": 0.0483, "rotationY": -0.0663, "rotationZ": -2.738 },
+						"Elbow.R": { "rotationX": -0.0223, "rotationY": -0.1941, "rotationZ": 0.3186 },
+						"Arm.R": { "rotationX": 0.2229, "rotationY": 0.778, "rotationZ": -60.4432 },
+						"FCannon.R": { "rotationX": -0.1251, "rotationY": 0.6192, "rotationZ": 114.4554 },
+						"FPastern.R": { "rotationX": -0.1731, "rotationY": 0.3984, "rotationZ": 83.2511 },
+						"FHoof.R": { "rotationX": -0.0538, "rotationY": 0.0503, "rotationZ": 10.6002 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Trot",
 			"code": "trot",
 			"quantityframes": 21,
 			"onActivityStopped": "EaseOut",
@@ -1872,7 +2468,7 @@
 		},
 
 		{
-			"name": "walk",
+			"name": "Walk",
 			"code": "walk",
 			"quantityframes": 41,
 			"onActivityStopped": "EaseOut",

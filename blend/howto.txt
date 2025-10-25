@@ -6,4 +6,5 @@ animations exported from blender, untouched. Before export, cyclic animations (w
 zebra-imperial-foal:
 - sit, sleep, and dead animations adjusted to properly be positioned on the ground
 - trot animation has hooves colliding, but was not adjusted to fix it
+- graze animation adjusted, neck and mane-withers only, so the neck doesn't detach
 
