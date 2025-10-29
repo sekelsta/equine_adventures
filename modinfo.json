@@ -1,10 +1,10 @@
 {
-  "type": "code",
+  "type": "content",
   "modid": "equineadventures",
   "name": "Equine Adventures",
-  "description" : "Adds equines.",
+  "description" : "Adds one species of zebra.",
   "authors": ["sekelsta"],
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": { 
 	"game": "",
 	"survival": "",

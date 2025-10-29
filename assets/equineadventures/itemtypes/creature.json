@@ -5,37 +5,18 @@
     variantgroups: [
         {
           code: "type",
-          states: [ "horse-tarpan", "horse-takhi", "ass-donkey", "ass-onager", "ass-kiang", "zebra-plains", "zebra-quagga", "zebra-mountain", "zebra-imperial" ]
+          states: [ "zebra-imperial" ]
         },
-        { "code": "age", "states": ["adult", "yearling", "foal"] },
+        { "code": "age", "states": ["adult", "foal"] },
         { "code": "gender", "states": ["male", "female"] }
     ],
     shapeByType: {
         "creature-equine-zebra-imperial-foal-*": { base: "entity/equine/zebra-imperial-foal" },
         "creature-equine-zebra-imperial-*": { base: "entity/equine/zebra-imperial-adult" },
-        "*-foal": {
-		    "base": "entity/equine/horse-foal"
-	    },
-        "*-yearling": {
-		    "base": "entity/equine/horse-adult"
-	    },
-        "*-adult": {
-		    "base": "entity/equine/horse-adult"
-	    },
     },
     textureByType: {
         "creature-equine-zebra-imperial-foal-*": { base: "entity/equine/zebra-imperial-foal" },
         "creature-equine-zebra-imperial-*": { base: "entity/equine/zebra-imperial-adult" },
-        "*-foal": { base: "entity/equine/horse-foal" },
-        "*-yearling": { base: "entity/equine/horse-adult" },
-        "*-adult": { base: "entity/equine/horse-adult" },
-    },
-    sizeByType: {
-        "*-adult-male": 1.01,
-        "*-adult-female": 0.99,
-        "*-yearling-male": 0.91,
-        "*-yearling-female": 0.89,
-        "*": 1.0
     },
     creativeinventory: {
         general: [ "*" ],
