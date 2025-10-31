@@ -468,8 +468,8 @@
 										},
 										{
 											"name": "Mane Upper",
-											"from": [ 0.0, 4.5, 1.05 ],
-											"to": [ 3.4, 6.6, 2.35 ],
+											"from": [ 0.0, 4.5, 1.1 ],
+											"to": [ 3.4, 6.6, 2.3 ],
 											"uv": [ 30.5, 3.5 ],
 											"rotationOrigin": [ 2.8969, 4.5, 1.7 ],
 											"rotationZ": 6.02,
@@ -1878,7 +1878,7 @@
 				{
 					"frame": 0,
 					"elements": {
-						"Body": { "offsetX": 0.2996, "offsetY": -0.6158, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.5304 },
+						"Body": { "offsetX": 0.0682, "offsetY": -9.6128, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.5304 },
 						"Hip": { "rotationX": -2.772, "rotationY": -1.8992, "rotationZ": 4.3324 },
 						"Chest": { "rotationX": 0.5169, "rotationY": 1.6723, "rotationZ": 2.592 },
 						"Forehead": { "rotationX": 0.4194, "rotationY": -1.0108, "rotationZ": -17.3226 },
@@ -1888,6 +1888,7 @@
 						"Tailtip": { "offsetX": -0.025, "offsetY": 0.0776, "offsetZ": -0.0174, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Poll": { "rotationX": 0.3945, "rotationY": -0.8788, "rotationZ": -9.7675 },
 						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.2477 },
+						"Thigh.R": { "rotationX": 2.0003, "rotationY": 1.2139, "rotationZ": 11.4061 },
 						"Gaskin.R": { "rotationX": -0.4497, "rotationY": 2.4224, "rotationZ": 9.3192 },
 						"HCannon.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -4.4525, "rotationY": -5.28, "rotationZ": -18.6601 },
 						"HPastern.R": { "rotationX": 3.4448, "rotationY": 0.9695, "rotationZ": 66.0531 },
@@ -1982,7 +1983,7 @@
 				{
 					"frame": 15,
 					"elements": {
-						"Body": { "offsetX": 0.3173, "offsetY": -0.5223, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.2179 },
+						"Body": { "offsetX": 0.3506, "offsetY": -9.5223, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.2179 },
 						"Chest": { "rotationX": -0.2946, "rotationY": -1.1668, "rotationZ": 5.5966 },
 						"Forehead": { "rotationX": -0.4255, "rotationY": 0.798, "rotationZ": -18.3054 }
 					}
@@ -2014,6 +2015,7 @@
 						"Neck": { "rotationX": -0.0182, "rotationY": 0.8194, "rotationZ": -14.8206 },
 						"Tailhead": { "rotationX": -0.2031, "rotationY": 0.5924, "rotationZ": 44.6671 },
 						"Tailtip": { "rotationX": 1.12, "rotationY": 1.1458, "rotationZ": 12.1447 },
+						"Thigh.R": { "rotationX": -3.0183, "rotationY": 1.989, "rotationZ": -1.5223 },
 						"Thigh.L": { "rotationX": -2.0003, "rotationY": -1.2139, "rotationZ": 11.4061 },
 						"FPastern.R": { "rotationX": -0.6274, "rotationY": 0.287, "rotationZ": 34.5536 }
 					}
@@ -2043,6 +2045,12 @@
 					"frame": 26,
 					"elements": {
 						"Arm.R": { "rotationX": 0.0209, "rotationY": 0.3793, "rotationZ": -22.6061 }
+					}
+				},
+				{
+					"frame": 27,
+					"elements": {
+						"Thigh.R": { "rotationX": -2.3156, "rotationY": 1.5909, "rotationZ": -3.5899 }
 					}
 				},
 				{
@@ -2079,7 +2087,7 @@
 				{
 					"frame": 35,
 					"elements": {
-						"Body": { "offsetX": 0.2958, "offsetY": -0.633, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.2179 },
+						"Body": { "offsetX": 0.0154, "offsetY": -9.6287, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.2179 },
 						"Chest": { "rotationX": 0.781, "rotationY": 0.9705, "rotationZ": 1.6471 },
 						"Forehead": { "rotationX": 0.5521, "rotationY": -0.7782, "rotationZ": -15.9028 },
 						"Elbow.L": { "rotationX": 0.0789, "rotationY": 0.2605, "rotationZ": -14.7887 },
@@ -2102,7 +2110,7 @@
 				{
 					"frame": 39,
 					"elements": {
-						"Body": { "offsetX": 0.2984, "offsetY": -0.6215, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.4259 },
+						"Body": { "offsetX": 0.0506, "offsetY": -9.6181, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.4259 },
 						"Hip": { "rotationX": -2.7318, "rotationY": -1.8717, "rotationZ": 4.3337 },
 						"Chest": { "rotationX": 0.5484, "rotationY": 1.6344, "rotationZ": 2.4934 },
 						"Forehead": { "rotationX": 0.4312, "rotationY": -1.0001, "rotationZ": -17.1749 },
@@ -2112,6 +2120,7 @@
 						"Tailtip": { "offsetX": -0.025, "offsetY": 0.0781, "offsetZ": -0.0146, "rotationX": -1.8844, "rotationY": -0.5696, "rotationZ": 0.0919 },
 						"Poll": { "rotationX": 0.4353, "rotationY": -0.9787, "rotationZ": -9.7881 },
 						"Throat": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.2477 },
+						"Thigh.R": { "rotationX": 1.9474, "rotationY": 1.2071, "rotationZ": 11.1561 },
 						"Gaskin.R": { "rotationX": -0.3484, "rotationY": 2.4346, "rotationZ": 9.1255 },
 						"HCannon.R": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.5782, "rotationY": -4.6483, "rotationZ": -14.9963 },
 						"HPastern.R": { "rotationX": 3.4456, "rotationY": 0.9661, "rotationZ": 65.9782 },
