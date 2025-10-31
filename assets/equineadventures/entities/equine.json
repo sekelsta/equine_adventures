@@ -1,7 +1,7 @@
 {
     code: "equine",
     class: "EntityAgent",
-	tagsByType: {
+    tagsByType: {
         "*-foal": ["animal", "huntable", "habitat-land"],
         "*": ["animal", "huntable", "adult", "habitat-land"],
     },
@@ -11,16 +11,15 @@
         { code: "gender", states: ["male", "female"] }
     ],
     hitBoxSizeByType: {
-        "equine-*-adult": { x: 1.67, y: 1.5 },
-        "*": { "x": 0.7,"y": 0.7}
+        "equine-*-adult-*": { x: 1.67, y: 1.5 },
+        "*": { "x": 0.9,"y": 1.3}
     },
     deadhitBoxSizeByType: {
-        "equine-*-adult": { x: 1.67, y: 0.75 },
-        "*": { "x": 0.6,"y": 0.3}
+        "equine-*-adult-*": { x: 1.67, y: 0.75 },
+        "*": { "x": 0.9,"y": 0.5}
     },
     eyeHeightByType: {
-        "equine-*-adult": 1.5,
-        "equine-*-yearling": 1.4,
+        "equine-*-adult-*": 1.5,
         "*": 0.6
     },
     weightByType: {
@@ -35,10 +34,16 @@
             foodTags: ["nibbleCrop", "grass", "vegetable", "foliage", "hay", "fruitmash" ],
             skipFoodTags: [ "riceCrop", "parsnipCrop", "onion", "cassava" ],
         },
-        basketCatchable: true,
-        trapChance: 0.0,
-        trapDestroyChance: 0.8,
-        poulticeRevive: true,
+        trappableByType: {
+            "*-foal-*": {
+                "small": { trapChance: 0.0, trapDestroyChance: 0.2 },
+                "large": { trapChance: 0.4, trapDestroyChance: 0 }
+            },
+            "*": {
+                "small": { trapChance: 0.0, trapDestroyChance: 0.2 },
+                "large": { trapChance: 0.0, trapDestroyChance: 0.1 }
+            },
+        },
         handbook: {
             groupcode: "creaturegroup-equine"
         },
@@ -166,12 +171,8 @@
                     damageByType: {
                         "equine-zebra-*-adult-male": 8,
                         "equine-zebra-*-adult-female": 6,
-                        "equine-zebra-*-yearling-male": 5,
-                        "equine-zebra-*-yearling-female": 4,
                         "equine-*-adult-male": 6,
                         "equine-*-adult-female": 4,
-                        "equine-*-yearling-male": 4,
-                        "equine-*-yearling-female": 3
                     },
                     damageTier: 2,
                     damageType: "SlashingAttack",
@@ -189,12 +190,8 @@
                     entityCodes: [ "player", "wolf-*", "hyena-male", "hyena-*", "bear-*", "caninae-cerdocyonina-adult-*-chrysocyon-brachyurus", "caninae-cerdocyonina-adult-*-dusicyon-australis", "caninae-cerdocyonina-adult-*-dusicyon-avus", "caninae-cerdocyonina-adult-*-speothos-pacivorus", "caninae-canina-adult-*", "machairodontinae-adult-*" ],
                     priority: 1.51,
                     movespeedByType: {
-                        "equine-horse-*-adult": 0.08,
-                        "equine-horse-*-yearling": 0.08,
-                        "equine-horse-*-foal": 0.06,
-                        "equine-*-adult": 0.06,
-                        "equine-*-yearling": 0.06,
-                        "equine-*-foal": 0.05
+                        "equine-*-adult-*": 0.06,
+                        "equine-*-foal-*": 0.05
                     },
                     seekingRange: 14,
                     animationSpeed: 2
@@ -205,12 +202,8 @@
                     entityCodes: [ "varanus-adult-salvator", "varanus-adult-marmoratus", "varanus-adult-palawanensis", "varanus-adult-komodoensis", "blackrat", "chainviper", "coachwhip", "pitviper" ],
                     priority: 1.49,
                     movespeedByType: {
-                        "equine-horse-*-adult": 0.08,
-                        "equine-horse-*-yearling": 0.08,
-                        "equine-horse-*-foal": 0.06,
-                        "equine-*-adult": 0.06,
-                        "equine-*-yearling": 0.06,
-                        "equine-*-foal": 0.05
+                        "equine-*-adult-*": 0.06,
+                        "equine-*-foal-*": 0.05
                     },
                     seekingRange: 6,
                     animationSpeed: 2
@@ -226,7 +219,7 @@
                     priority: 1.6,
                     mincooldown: 600,
                     maxcooldown: 650,
-                    movespeed: 0.05,
+                    movespeed: 0.02,
                     seekingRange: 20,
                     animationSpeed: 1,
                     whenInEmotionState: "aggressiveondamage"
@@ -252,8 +245,8 @@
                     animation: "Swim",
                     priority: 1.4,
                     movespeedByType: {
-                        "equine-*-adult": 0.045,
-                        "equine-*-foal": 0.035,
+                        "equine-*-adult-*": 0.035,
+                        "equine-*-foal-*": 0.025,
                     },
                     animationSpeed: 1
                 },
@@ -315,8 +308,7 @@
                     priorityForCancel: 1.35,
                     stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
                     movespeedByType: {
-                        "equine-horse-*-adult": 0.006,
-                        "equine-horse-*-foal": 0.004,
+                        "*-foal-*": 0.006,
                         "*": 0.006
                     },
                     animationSpeedByType: {
@@ -488,67 +480,43 @@
                         type: "item",
                         code: "game:redmeat-raw",
                         quantityByType: {
-                            "equine-horse-tarpan-*": { avg: 102, var: 10 },
-                            "equine-horse-takhi-*": { avg: 71, var: 7 },
-                            "equine-ass-donkey-*": { avg: 65, var: 6 },
-                            "equine-ass-kiang-*": { avg: 81, var: 8 },
-                            "equine-ass-onager-*": { avg: 58, var: 6 },
-                            "equine-zebra-plains-*": { avg: 60, var: 6 },
-                            "equine-zebra-mountain-*": { avg: 61, var: 6 },
-                            "equine-zebra-imperial-*": { avg: 94, var: 9 },
+                            "*-foal-*": { avg: 3, var: 2 },
+                            "equine-horse-tarpan-*": { avg: 51, var: 0 },
+                            "equine-horse-takhi-*": { avg: 36, var: 0 },
+                            "equine-ass-kiang-*": { avg: 40, var: 0 },
+                            "equine-zebra-imperial-*": { avg: 47, var: 0 },
+                            "*": { avg: 30, var: 0 },
                         }
                     },
                     {
                         type: "item",
                         code: "game:fat",
                         quantityByType: {
-                            "equine-horse-tarpan-*": { avg: 25, var: 2 },
-                            "equine-horse-takhi-*": { avg: 18, var: 2 },
-                            "equine-ass-donkey-*": { avg: 16, var: 1.5 },
-                            "equine-ass-kiang-*": { avg: 20, var: 2 },
-                            "equine-ass-onager-*": { avg: 14, var: 1.5 },
-                            "equine-zebra-plains-*": { avg: 15, var: 1.5 },
-                            "equine-zebra-mountain-*": { avg: 15, var: 2 },
-                            "equine-zebra-imperial-*": { avg: 23, var: 2 },
+                            "*-foal-*": { avg: 0.5, var: 0.1 },
+                            "equine-horse-tarpan-*": { avg: 8, var: 0 },
+                            "equine-horse-takhi-*": { avg: 6, var: 0 },
+                            "equine-ass-kiang-*": { avg: 7, var: 0 },
+                            "equine-zebra-imperial-*": { avg: 8, var: 0 },
+                            "*": { avg: 5, var: 0 },
                         }
                     },
                     {
                         type: "item",
                         code: "hide-raw-huge",
                         quantityByType: {
-                            "*-foal": { avg: 0, var: 0 },
-                            "equine-horse-tarpan-*": { avg: 2.75, var: 0 },
-                            "equine-horse-takhi-*": { avg: 2.17, var: 0 },
-                            "equine-ass-donkey-*": { avg: 2, var: 0 },
-                            "equine-ass-kiang-*": { avg: 2.36, var: 0 },
-                            "equine-ass-onager-*": { avg: 1.88, var: 0 },
-                            "equine-zebra-plains-*": { avg: 1.93, var: 0 },
-                            "equine-zebra-mountain-*": { avg: 2, var: 0 },
-                            "equine-zebra-imperial-*": { avg: 2.6, var: 0 },
-                        }
-                    },
-                    {
-                        type: "item",
-                        code: "hide-raw-large",
-                        quantityByType: {
-                            "*-foal": { avg: 0, var: 0 },
-                            "*-adult": { avg: 0, var: 0 },
-                            "equine-horse-tarpan-*": { avg: 4.6, var: 0 },
-                            "equine-horse-takhi-*": { avg: 3.6, var: 0 },
-                            "equine-ass-donkey-*": { avg: 3.4, var: 0 },
-                            "equine-ass-kiang-*": { avg: 4, var: 0 },
-                            "equine-ass-onager-*": { avg: 3.1, var: 0 },
-                            "equine-zebra-plains-*": { avg: 3.2, var: 0 },
-                            "equine-zebra-mountain-*": { avg: 3.25, var: 0 },
-                            "equine-zebra-imperial-*": { avg: 4.3, var: 0 },
+                            "*-foal-*": { avg: 0, var: 0 },
+                            "equine-horse-tarpan-*": { avg: 1.8, var: 0 },
+                            "equine-horse-takhi-*": { avg: 1.4, var: 0 },
+                            "equine-ass-kiang-*": { avg: 1.6, var: 0 },
+                            "equine-zebra-imperial-*": { avg: 1.7, var: 0 },
+                            "*": 1.3,
                         }
                     },
                     {
                         type: "item",
                         code: "hide-raw-medium",
                         quantityByType: {
-                            "*-adult": { avg: 0, var: 0 },
-                            "*-yearling": { avg: 0, var: 0 },
+                            "*-adult-*": { avg: 0, var: 0 },
                             "equine-horse-tarpan-*": { avg: 6.9, var: 0 },
                             "equine-horse-takhi-*": { avg: 5.4, var: 0 },
                             "equine-ass-donkey-*": { avg: 5.1, var: 0 },
