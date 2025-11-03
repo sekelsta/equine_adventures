@@ -513,6 +513,13 @@
 								}
 							]
 						}
+					],
+					"attachmentpoints": [
+						{
+							"code": "Center",
+							"posX": "6.0","posY": "5.0","posZ": "3.5",
+							"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+						}
 					]
 				},
 				{
@@ -1858,16 +1865,16 @@
 				{
 					"frame": 80,
 					"elements": {
-						"Body": { "offsetX": 1.6783, "offsetY": 8.3419, "offsetZ": 21.4089, "rotationX": 78.5432, "rotationY": -0.6459, "rotationZ": 0.406 },
-						"Elbow.L": { "rotationX": 10.3276, "rotationY": 0.3352, "rotationZ": 5.7393 },
+						"Body": { "offsetX": 1.6783, "offsetY": 8.3419, "offsetZ": 22.1089, "rotationX": 78.5432, "rotationY": -0.6459, "rotationZ": 0.406 },
+						"Elbow.L": { "rotationX": 8.0, "rotationY": 0.3352, "rotationZ": 5.7393 },
 						"Thigh.L": { "rotationX": 5.3062, "rotationY": 1.8861, "rotationZ": -0.0518 },
-						"Gaskin.L": { "rotationX": 5.2454, "rotationY": -0.7334, "rotationZ": 2.0623 },
+						"Gaskin.L": { "rotationX": 0.0, "rotationY": -0.7334, "rotationZ": 2.0623 },
 						"Arm.L": { "rotationX": -0.2277, "rotationY": 0.1599, "rotationZ": -25.979 },
 						"FCannon.L": { "rotationX": 0.687, "rotationY": -0.6717, "rotationZ": 41.3812 },
 						"FPastern.L": { "rotationX": 1.2848, "rotationY": -0.7632, "rotationZ": 66.6712 },
 						"Elbow.R": { "rotationX": 0.7873, "rotationY": -0.6016, "rotationZ": 3.1396 },
-						"Arm.R": { "rotationX": -12.2153, "rotationY": 5.9362, "rotationZ": -20.3996 },
-						"Gaskin.R": { "rotationX": -10.1087, "rotationY": -2.5246, "rotationZ": -12.1858 },
+						"Arm.R": { "rotationX": -6.0, "rotationY": 5.9362, "rotationZ": -20.3996 },
+						"Gaskin.R": { "rotationX": -6.0, "rotationY": -2.5246, "rotationZ": -12.1858 },
 						"HPastern.R": { "rotationX": 1.4784, "rotationY": -3.4918, "rotationZ": 16.7035 },
 						"Chest": { "rotationX": 0.0751, "rotationY": 0.9675, "rotationZ": 0.196 },
 						"Neck": { "rotationX": 2.3399, "rotationY": 15.1126, "rotationZ": 6.7629 },
