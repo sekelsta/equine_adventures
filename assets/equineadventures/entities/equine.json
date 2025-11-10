@@ -267,6 +267,7 @@
                 {
                     code: "idle",
                     animation: "Sleep",
+                    enabled: false,
                     priority: 1.38,
                     minduration: 200000,
                     maxduration: 800000,
@@ -291,6 +292,7 @@
                 {
                     code: "idle",
                     animation: "Sit",
+                    enabled: false,
                     priority: 0.9,
                     minduration: 6000,
                     maxduration: 45000,
@@ -303,6 +305,23 @@
                 },
                 {
                     code: "wander",
+                    animation: "Trot",
+                    priority: 1.0,
+                    priorityForCancel: 1.35,
+                    stopOnNearbyEntityCodes: [ "player", "wolf-*", "hyena-*", "bear-*", "caninae-*" ],
+                    movespeedByType: {
+                        "*-foal-*": 0.02,
+                        "*": 0.02
+                    },
+                    animationSpeedByType: {
+                        "*-foal": 1.0,
+                        "*": 1.0
+                    },
+                    "preferredLightLevel": 12
+                },
+                {
+                    code: "wander",
+                    enabled: false,
                     animation: "Walk",
                     priority: 1.0,
                     priorityForCancel: 1.35,
@@ -312,8 +331,8 @@
                         "*": 0.006
                     },
                     animationSpeedByType: {
-                        "*-foal": 0.8,
-                        "*": 0.8
+                        "*-foal": 1.0,
+                        "*": 1.0
                     },
                     "preferredLightLevel": 12
                 },
@@ -533,7 +552,7 @@
             {
                 code: "multiply",
                 enabledByType: { "*-adult-female": true, "*": false },
-                spawnEntityCodes: [ "equine-{type}-foal-male", "equine-{type}-foal-female" ],
+                spawnEntityCodes: [ { code: "equine-{type}-foal-male" }, { code: "equine-{type}-foal-female" } ],
                 requiresNearbyEntityCode: [ "equine-{type}-adult-male" ],
                 pregnancyDaysByType: { 
                     "equine-horse-*": 55,
