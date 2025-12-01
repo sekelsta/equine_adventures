@@ -8,5 +8,5 @@ rm assets/equineadventures/lang/es-es.json
 #rm -r bin/
 #rm -r src/obj/
 rm "${VINTAGE_STORY_DEV}"/Mods/equine_adventures_*.zip
-cp equine_adventures_*.zip "${VINTAGE_STORY_DEV}/Mods"
+mv equine_adventures_*.zip "${VINTAGE_STORY_DEV}/Mods"
 
